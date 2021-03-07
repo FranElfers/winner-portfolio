@@ -1,23 +1,22 @@
-import logo from './logo.svg';
+import React from 'react';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+// react-router-dom no tiene 'Router', eso es de react-router.
 import './App.css';
+import Menu from './components/Menu';
+import GifAPI from './components/GifAPI';
 
-function App() {
+function App() {  
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <section className="App-content">
+        <Router>
+          <Switch>
+            <Route path="/gifs/" component={GifAPI} />
+            <Route path="/" component={Menu} /> 
+            {/* el path '/' tiene que estar a lo ultimo */}
+          </Switch>
+        </Router>
+      </section>
     </div>
   );
 }
