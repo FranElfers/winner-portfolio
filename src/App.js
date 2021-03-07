@@ -8,15 +8,13 @@ import GifAPI from './components/GifAPI';
 function App() {  
   return (
     <div className="App">
-      <section className="App-content">
-        <Router>
-          <Switch>
-            <Route path="/gifs/" component={GifAPI} />
-            <Route path="/" component={Menu} /> 
-            {/* el path '/' tiene que estar a lo ultimo */}
-          </Switch>
-        </Router>
-      </section>
+      <Router>
+        <Switch>
+          <Route path="/gifs/" component={GifAPI} />
+          <Route path="/" component={Menu} /> 
+          {/* el path '/' tiene que estar a lo ultimo */}
+        </Switch>
+      </Router>
     </div>
   );
 }
