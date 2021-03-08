@@ -1,10 +1,11 @@
 .p5grid {
-	--grid-min-size: 400px;
+	--grid-min-size: 300px;
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(var(--grid-min-size), 1fr));
   grid-gap: 10px;
+  overflow: hidden;
 }
 
 .p5grid canvas {
-	width: 100%;
+  border-radius: 10px; 
 }

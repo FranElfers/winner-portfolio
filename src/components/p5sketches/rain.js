@@ -5,7 +5,7 @@ export default function Rain(props) {
 	let drop = [];
 
 	const setup = (p5,canvasParentRef) => {
-		p5.canvas = p5.createCanvas(400,400).parent(canvasParentRef);
+		p5.canvas = p5.createCanvas(props.width,props.width).parent(canvasParentRef);
 		for (var i = 0; i < 200; i++) {
 			drop[i] = new Water(p5);
 		}

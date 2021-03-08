@@ -21,7 +21,7 @@ const caps = [
 	{
 		name: 'P5js',
 		to: '/p5js',
-		icon: ''
+		icon: 'https://blindedcyclops.neocities.org/p5js-icons/p5-sq-reverse-filled.png'
 	}
 	
 	// {name: 'API on React',href: '#',icon: 'api.svg'},
