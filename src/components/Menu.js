@@ -18,6 +18,11 @@ const caps = [
 		to: '#',
 		icon: 'https://cdn.worldvectorlogo.com/logos/logo-javascript.svg'
 	},
+	{
+		name: 'P5js',
+		to: '/p5js',
+		icon: ''
+	}
 	
 	// {name: 'API on React',href: '#',icon: 'api.svg'},
 	// {name: 'Firebase',href: '#',icon: 'firebase.svg'},

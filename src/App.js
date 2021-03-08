@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import './App.css';
 import Menu from './components/Menu';
 import GifAPI from './components/GifAPI';
+import P5 from './components/P5';
 
 function App() {  
   return (
@@ -11,6 +12,7 @@ function App() {
       <Router>
         <Switch>
           <Route path="/gifs/" component={GifAPI} />
+          <Route path="/p5js" component={P5} />
           <Route path="/" component={Menu} /> 
           {/* el path '/' tiene que estar a lo ultimo */}
         </Switch>
