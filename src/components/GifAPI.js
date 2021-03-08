@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import { Link, useHistory } from "react-router-dom";
 import ListOfGifs from "./ListOfGifs";
 import './Gif.css';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faArrowLeft } from '@fortawesome/free-solid-svg-icons'
 
 
 export default function GifAPI() {
@@ -24,8 +26,12 @@ export default function GifAPI() {
 
 	return <>
 		<form>
-      <Link to={'/'}>🏠</Link>
-			<input onChange={handleChange} type="text" value={keyword} />
+      <Link to={'/'}>
+        <FontAwesomeIcon icon={faArrowLeft} />
+      </Link>
+      
+			<input onChange={handleChange} type="text" value={keyword} placeholder="Buscar"/>
+      <div></div>
 		</form>
 
 		<div id="listOfGifs">

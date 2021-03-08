@@ -62,6 +62,9 @@ export default function Menu() {
 	// acordarse del segundo parametro del useEffect, porque el setStars actualiza el componente
 	// tengo que aleatorizar las estrellas de cada cap y ahora mismo no me da la cabeza
 
+	
+
+
 	return <div className="App-center">
 		<div className="cap-container width1000">
 			{caps.map(({name,to,icon},i) => 
