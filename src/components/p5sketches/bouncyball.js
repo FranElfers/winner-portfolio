@@ -1,38 +1,44 @@
-var sketch = function(p) {
-	p.topaltura = [];
+import Sketch from 'react-p5';
+
+export default function Bouncyball({width}) {
+	let topaltura = [], ball, mouseDown;
 	
-	p.setup = function(){
-		p.canvas = p.createCanvas(500,500).parent('bouncyball');
-		p.ball = new p.Ball();
+	const setup = function(p5,parent){
+		p5.canvas = p5.createCanvas(width,width).parent(parent);
+		ball = new Ball();
 	}
 	
-	p.draw = function(){
-		p.background(150);
-		p.ball.update();
-		p.ball.draw();
+	const draw = function(p5){
+		p5.background(150);
+		ball.update(p5);
+		ball.draw(p5);
 	
-		p.altura = p.int((p.ball.y - 460) *(-1));
-		p.velocidad = 'Velocidad: ' + p.int(p.ball.yspeed * (-1));
+		let altura = p5.int((ball.y - 460) *(-1));
+		let velocidad = 'Velocidad: ' + p5.int(ball.yspeed * (-1));
 		
-		if (p.int(p.ball.yspeed) === 0){
-			p.append(p.topaltura, p.altura);
+		if (p5.int(ball.yspeed) === 0){
+			topaltura.push(altura);
 		}
-		if (p.topaltura.length > 3){
-			p.a = p.topaltura.indexOf(p.min(p.topaltura));
-			p.topaltura.splice(p.a,1);
+		if (topaltura.length > 3){
+			topaltura.splice(topaltura.indexOf(p5.min(topaltura)),1);
 		}
-		p.text('Altura: ' + p.altura, 20, 20);
-		p.text(p.velocidad, 20, 40);
-		p.text('Altura maxima: ' + p.max(p.topaltura), 20,60);
+		p5.text('Altura: ' + altura, 20, 20);
+		p5.text(velocidad, 20, 40);
+		p5.text('Altura maxima: ' + p5.max(topaltura), 20,60);
+
+		document.body.onmousedown = () => mouseDown = true;
+		document.body.onmouseup = () => mouseDown = false;
+		document.body.ontouchstart = () => mouseDown = true;
+		document.body.ontouchend = () => mouseDown = false;
 	}
 	
-	p.Ball = function(){
-		this.x = p.width/2;
-		this.y = p.height/2;
+	const Ball = function(p5){
+		this.x = width/2;
+		this.y = width/2;
 		this.yspeed = 1;
 	
-		this.update = function(){
-			if (this.y < p.height-40){
+		this.update = function(p5){
+			if (this.y < width-40){
 				this.yspeed += 1/10; 
 			} else {
 				// Lo que sucede cuando toca el piso
@@ -42,14 +48,14 @@ var sketch = function(p) {
 			this.y += this.yspeed;
 		}
 	
-		this.draw = function() {
-			if (this.y >= p.height-40){this.y = p.height-40;};
-			if (p.mouseIsPressed){this.yspeed += 1};
-	
-			p.fill(255);
-			p.ellipse(this.x,this.y,80,80);
+		this.draw = function(p5) {
+			if (this.y >= width-40){this.y = width-40;};
+			if (mouseDown) this.yspeed++;
+
+			p5.fill(255);
+			p5.ellipse(this.x,this.y,80,80);
 		}
 	}
-}
 
-var bouncyball = new p5(sketch);
+	return <Sketch setup={setup} draw={draw} />
+}

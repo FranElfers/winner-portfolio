@@ -1,67 +1,72 @@
-var sketch = function(p){
-	let player;
-	let obs = [];		// Lista de obstaculos
-	p.best = [];
-	p.puntos = 0;
-	p.cero = 0;
-	p.f = 0;
-	p.bgpos = 800;
-	p.pausa = false;
-	p.inicio = true;
-	p.modo = false;
+import Sketch from 'react-p5';
+import Imagen from './bg.png';
+
+export default function({width, init}){
+	let player, bg, modoFacil, canvas;
+	let obs = [];
+	let best = [];
+	let puntos = 0;
+	let cero = 0;
+	let f = 0;
+	let bgpos = 800;
+	let inicio = true;
+	let pausa = false;
+	let modo = false;
 	
-	p.preload = () =>	p.bg = p.loadImage('bg.png');
+	const preload = p5 => p5.loadImage(Imagen, img => bg = img);
 	
-	p.setup = function() {
-		p.canvas = p.createCanvas(500,500).parent('flappy');
-		p.modoFacil = p.createCheckbox('Modo fasssil');
-		p.textFont('Arial');
-		player = new p.Bird();
+	const setup = function(p5,parent) {
+		p5.canvas = p5.createCanvas(width,width).parent(parent);
+		modoFacil = p5.createCheckbox('Modo fasssil').parent(parent);
+		p5.textFont('Arial');
+		player = new Bird(p5);
 	}
 	
-	p.draw = function() {
-		p.background(150,150,255);
-		p.animatedBG();
+	const draw = function(p5) {
+		p5.background(150,150,255);
+		animatedBG(p5);
 	
-		if (p.inicio) { p.juegoInicio() } 
-		else if (p.pausa) { p.juegoPausado() } 
-		else { p.juego() }
+		if (inicio) { juegoInicio(p5) } 
+		else if (pausa) { juegoPausado(p5) } 
+		else { juego(p5) }
+
+		if (!init && p5.frameCount > 30) p5.frameRate(0)
 	}
 	
-	p.animatedBG = function(){	
-		p.image(p.bg, p.bgpos, 0, p.width, p.height);
-		p.image(p.bg, p.bgpos - p.width, 0, p.width, p.height);
-		if (p.bgpos <= 0) p.bgpos = p.width;
-		p.bgpos--;
+	const animatedBG = function(p5){
+		p5.image(bg, bgpos, 0, width, width);
+		p5.image(bg, bgpos - width, 0, width, width);
+		if (bgpos <= 0) bgpos = width;
+		bgpos--;
 	}
 	
-	p.juegoInicio = function(){
-		p.fill(100,255,100);
-		p.rect(0,0,p.width,p.height);
-		p.push();
-			p.rectMode(p.CENTER);
-			p.fill(200);
-			p.rect(p.width/2,p.height/2,400,40);
-		p.pop();
-		p.fill(0);
-		p.textAlign(p.CENTER);
-		p.textSize(30);
-		p.text('Click to start, "S" key to jump',p.width/2,p.height/2+10);
+	const juegoInicio = function(p5){
+		p5.fill(100,255,100);
+		p5.rect(0,0,width,width);
+		p5.push();
+			p5.rectMode(p5.CENTER);
+			p5.fill(200);
+			p5.rect(width/2,width/2,400,40);
+		p5.pop();
+		p5.fill(0);
+		p5.textAlign(p5.CENTER);
+		p5.textSize(30);
+		p5.text('Click to start, "S" key to jump',width/2,width/2+10);
 	
-		if (p.mouseIsPressed) p.inicio = false;
+		if (p5.mouseIsPressed) inicio = false;
 	}
 	
-	p.juego = function(){
-		p.cero = 0;
+	const juego = function(p5){
+		cero = 0;
 	
 		// Modo juego, si toca algun borde o alguna pared, pasa a modo pausa //
-		player.update();
-		player.show();
+		player.update(p5);
+		player.show(p5);
 	
-		if (p.frameCount % 80 == 0) obs.push(new p.Wall());	// Coloca un obstaculo cada 80 frames	
+		if (p5.frameCount % 80 == 0) obs.push(new Wall(p5));	// Coloca un obstaculo cada 80 frames	
 	
 		for (var i = obs.length-1; i >= 0; i--){
-			if (p.modoFacil.checked()){
+			if (modoFacil.checked()){
 				player.h = 30;
 				obs[i].th = 20;
 			} else {
@@ -69,9 +74,9 @@ var sketch = function(p){
 				obs[i].th = 50;
 			}
 			obs[i].move();
-			obs[i].show();
+			obs[i].show(p5);
 			if (obs[i].left < -70 ){
-				p.puntos += 1;			// Agrega un punto
+				puntos += 1;			// Agrega un punto
 				obs.splice(i, 1);		// Elimina el obstaculo al sobrepasar la pantalla
 			}
 
@@ -89,102 +94,100 @@ var sketch = function(p){
 			let enArea = piso && techo;
 
 			if ((colisionX && !enGap) || !enArea){
-				p.pausa = true;			// Pausa el juego
-				p.f = p.frameCount;
+				pausa = true;			// Pausa el juego
+				f = p5.frameCount;
 			}
 		}
 	
-		p.fill(0);
-		p.textSize(30)
-		p.text(p.puntos,30,40);				// Puntuacion actual
+		p5.fill(0);
+		p5.textSize(30)
+		p5.text(puntos,30,40);				// Puntuacion actual
 		////////////////////////////////////////////////////////////
 	}
 	
-	p.juegoPausado = function(){
-		p.append(p.best, p.puntos);
+	const juegoPausado = function(p5){
+		p5.append(best, puntos);
 	
-		if (p.best.length > 3){
-			p.a = p.best.indexOf(p.min(p.best));
-			p.best.splice(p.a,1);
+		if (best.length > 3){
+			best.splice(best.indexOf(p5.min(best)),1);
 		}
 	
 		// Modo pausa, muestra el score y reinicia la partida //
-		p.fill(100,255,100);
-		p.rect(0,0,p.width,p.height); 			// Fondo del modo pausa
+		p5.fill(100,255,100);
+		p5.rect(0,0,width,width); 			// Fondo del modo pausa
 	
-		p.cooldown();
+		cooldown(p5);
 	
-		p.fill(0);
-		p.textAlign(p.CENTER);
-		p.textSize(100);
-		p.text(p.puntos, p.width/2, p.height/2); 	// Puntuacion final
+		p5.fill(0);
+		p5.textAlign(p5.CENTER);
+		p5.textSize(100);
+		p5.text(puntos, width/2, width/2); 	// Puntuacion final
 	
-		p.fill(255,255,0);
-		p.textSize(60);
-		p.text('Best: '+p.max(p.best), p.width/2, p.height/2+100)
+		p5.fill(255,255,0);
+		p5.textSize(60);
+		p5.text('Best: '+p5.max(best), width/2, width/2+100)
 	
 	
-		if (p.frameCount > p.f + 120){	// Luego de unos segundos
-			p.pausa = false; 		// Pasa a modo juego
+		if (p5.frameCount > f + 120){	// Luego de unos segundos
+			pausa = false; 		// Pasa a modo juego
 			player.y = 200;		// Coloca al jugador en la posicion inicial
 			player.speed = 0;	// Resetea la velocidad
 			obs = [];			// Remueve los obstaculos
-			p.puntos = 0;			// Resetea los puntos
+			puntos = 0;			// Resetea los puntos
 		}
 	}
 	
-	p.cooldown = function(){
-		p.fill(200,200,200,200);
-		p.x = p.map(p.cero, 0, 120, 0, p.TWO_PI);
-		p.x -= p.HALF_PI-0.01;
-		p.cero++;
-		p.arc(p.width/2, p.height/2, 300, 300, -p.HALF_PI, p.x);
+	const cooldown = function(p5){
+		p5.fill(200,200,200,200);
+		p5.x = p5.map(cero, 0, 120, 0, p5.TWO_PI);
+		p5.x -= p5.HALF_PI-0.01;
+		cero++;
+		p5.arc(width/2, width/2, 300, 300, -p5.HALF_PI, p5.x);
 	}
 	
 	document.addEventListener('keydown', e => {
-		if (e.keyCode == '83') {
-			player.jump();
+		if (player) {
+			return e.keyCode == '83' ? player.jump() : '';
 		}
-	});
+	})
 
-	p.Bird = function() {
+	const Bird = function(p5) {
 		this.h = 50; 						// Altura
 		this.x = 100; 					// Posicion x
-		this.y = p.height/2; 			// Posicion y
-		this.floor = p.height-20; // Altura del piso
+		this.y = width/2; 			// Posicion y
+		this.floor = width-20; // Altura del piso
 		this.jumpForce = 3; 		// Fuerza del salto
 		this.gravity = 0.1; 		// Gravedad
 	
 		this.speed = 0;	
 		this.jump = () => this.speed -= this.jumpForce;
 	
-		this.update = function() {
+		this.update = function(p5) {
 			this.speed += this.gravity;
 			this.y += this.speed;
 		}
 	
-		this.show = function() {
-			p.fill(100);
-			p.rect(this.x, this.y, 10, this.h);
+		this.show = function(p5) {
+			p5.fill(100);
+			p5.rect(this.x, this.y, 10, this.h);
 		}
 	}
 	
-	p.Wall = function(){	
+	const Wall = function(p5){
 		this.th = 50 		// Anchura de la pared
 		this.speed = 3; // Velocidad
 		this.gap = 100; // Abertura
 		
-		this.left = p.width;
-		this.uppergap = p.random(100,300);
+		this.left = width;
+		this.uppergap = p5.random(100,300);
 	
 		this.move = () => this.left -= this.speed;
 	
-		this.show = function() {
-			p.fill(255,255,0);
-			p.rect(this.left, 0, this.th, this.uppergap);
-			p.rect(this.left, this.uppergap + this.gap, this.th, p.height);
+		this.show = function(p5) {
+			p5.fill(255,255,0);
+			p5.rect(this.left, 0, this.th, this.uppergap);
+			p5.rect(this.left, this.uppergap + this.gap, this.th, width);
 		}
 	}
+	return <Sketch setup={setup} draw={draw} preload={preload} />
 }
-
-var flappy = new p5(sketch);

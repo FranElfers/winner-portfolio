@@ -64,16 +64,12 @@ export default function Menu() {
 		
 		setStars(tempArray);
 	}, [])
-	// acordarse del segundo parametro del useEffect, porque el setStars actualiza el componente
 	// tengo que aleatorizar las estrellas de cada cap y ahora mismo no me da la cabeza
-
-	
-
 
 	return <div className="App-center">
 		<div className="cap-container width1000">
 			{caps.map(({name,to,icon},i) => 
-				<Link to={to} className='cap' key={i}>
+				<Link to={to} className='cap' key={'link'+i}>
 					<div className="cap">
 						<figure>
 							<div className='canvas'>
@@ -85,8 +81,8 @@ export default function Menu() {
 					</div>
 				</Link>
 			)}
-			{links.map(({name,href,icon}) => 
-				<a href={href} target="_blank">
+			{links.map(({name,href,icon},i) => 
+				<a href={href} target="_blank" key={'a'+i}>
 					<div className="cap">
 						<figure>
 							<div className='canvas'>

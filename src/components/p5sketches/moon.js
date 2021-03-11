@@ -1,13 +1,11 @@
 import React from 'react';
 import Sketch from 'react-p5';
 
-export default function Moon(props){
-	let a = 0;
-	let earth, moon;
-	console.log(props);
+export default function Moon({width}){
+	let a = 0, earth, moon;
 
 	const setup = function(p5, parent) {
-		p5.canvas = p5.createCanvas(props.width,props.width).parent(parent);
+		p5.canvas = p5.createCanvas(width,width).parent(parent);
 		earth = new Planet(p5);
 		moon = new Moon(p5);
 	}
@@ -18,7 +16,7 @@ export default function Moon(props){
 		p5.line(earth.x, earth.y, moon.x, moon.y);
 		earth.show();
 		moon.show(a);
-		a = a + 0.001;
+		a += 0.001;
 	}
 	
 	const Planet = function(p5){
