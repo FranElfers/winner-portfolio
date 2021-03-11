@@ -8,7 +8,7 @@ export default function({width, init}){
 	let puntos = 0;
 	let cero = 0;
 	let f = 0;
-	let bgpos = 800;
+	let bgpos = width;
 	let inicio = true;
 	let pausa = false;
 	let modo = false;
@@ -17,7 +17,7 @@ export default function({width, init}){
 	
 	const setup = function(p5,parent) {
 		p5.canvas = p5.createCanvas(width,width).parent(parent);
-		modoFacil = p5.createCheckbox('Modo fasssil').parent(parent);
+		modoFacil = p5.createCheckbox('Easy mode').parent(parent);
 		p5.textFont('Arial');
 		player = new Bird(p5);
 	}
@@ -34,8 +34,8 @@ export default function({width, init}){
 	}
 	
 	const animatedBG = function(p5){
-		p5.image(bg, bgpos, 0, width, width);
-		p5.image(bg, bgpos - width, 0, width, width);
+		p5.image(bg, bgpos - width, 0, width, width); // primera foto
+		p5.image(bg, bgpos, 0, width, width); // segunda foto
 		if (bgpos <= 0) bgpos = width;
 		bgpos--;
 	}
@@ -142,13 +142,15 @@ export default function({width, init}){
 		p5.x = p5.map(cero, 0, 120, 0, p5.TWO_PI);
 		p5.x -= p5.HALF_PI-0.01;
 		cero++;
+		p5.noFill();
 		p5.arc(width/2, width/2, 300, 300, -p5.HALF_PI, p5.x);
 	}
 	
 	document.addEventListener('keydown', e => {
-		if (player) {
-			return e.keyCode == '83' ? player.jump() : '';
-		}
+		if (player) return e.keyCode == '83' ? player.jump() : ''
+	})
+	document.addEventListener('touchstart', () => {
+		if (player) player.jump()
 	})
 
 	const Bird = function(p5) {
@@ -179,7 +181,7 @@ export default function({width, init}){
 		this.gap = 100; // Abertura
 		
 		this.left = width;
-		this.uppergap = p5.random(100,300);
+		this.uppergap = p5.random(0,width-this.gap);
 	
 		this.move = () => this.left -= this.speed;
 	

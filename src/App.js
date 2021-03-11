@@ -12,7 +12,7 @@ function App() {
       <Router>
         <Switch>
           <Route path="/gifs/" component={GifAPI} />
-          <Route path="/p5js" component={P5} />
+          <Route path="/p5js/" component={P5} />
           <Route path="/" component={Menu} /> 
           {/* el path '/' tiene que estar a lo ultimo */}
         </Switch>
