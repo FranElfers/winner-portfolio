@@ -3,8 +3,7 @@ import { useState, useEffect } from 'react';
 import getGifs from '../../services/getGifs';
 import Gif from './Gif';
 
-export default function ListOfGifs({ params }) {
-	const { keyword } = params;
+export default function ListOfGifs({ keyword }) {
 	const [ loading, setLoading ] = useState(false);
 	const [ gifs, setGifs ] = useState([]);
 	

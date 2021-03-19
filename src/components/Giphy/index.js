@@ -6,7 +6,6 @@ import Back from '../Back';
 
 
 export default function GifAPI() {
-  // const { params } = match;
 	const [ keyword, setKeyword ] = useState('');
   const history = useHistory();
 
@@ -16,21 +15,24 @@ export default function GifAPI() {
   //   history.push(`/gifs/${keyword}`);
   //   console.log(keyword);
   // }
-  
-  // se ejecuta cada vez que hay un cambio en el formulario
+  let task;
   const handleChange = e => {
-    history.push(`/gifs/${keyword}`);
-    setKeyword(e.target.value);
+    clearTimeout(task);
+    task = setTimeout(() => {
+      // ejecutar busqueda
+      history.push(`/gifs/${keyword}`);
+      setKeyword(e.target.value);
+    }, 2000)
   }
 
 	return <>
     <Back to="/" />
 		<form>
-      <input onChange={handleChange} type="text" value={keyword} placeholder="Buscar"/>
+      <input onChange={handleChange} type="text" placeholder="Buscar"/>
 		</form>
 
 		<div id="listOfGifs">
-			<ListOfGifs params={{keyword}} />
+			<ListOfGifs keyword={keyword} />
 		</div>
 	</>
 }

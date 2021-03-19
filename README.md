@@ -2,9 +2,11 @@
 * Implementar API de Linkedin
 	* mmmm lo veo complicado, tengo que crear una empresa publica en la pagina y no se si me da gana
 	* hice todo pero al final es muy complicado para lo poco que quiero, hare mi propia pagina con mis propios datos, sin automatizacion, pero en otro momento
-* Investigar si vale la pena implementar API de 
+* Investigar si vale la pena implementar API de Github
 	* Fallido
-* Componente de flecha para volver
+* Seguir agregando mis proyectos de P5js
+* Completar con informacion tipo "about"
+* Agregar transiciones de router
 
 
 # Getting Started with Create React App

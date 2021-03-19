@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import getMenuItems from '../services/getMenuItems';
+import AboutSection from './AboutSection';
 import './Menu.css';
 import Stars from './Stars';
 
