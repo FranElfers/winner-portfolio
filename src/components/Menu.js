@@ -1,79 +1,25 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+import getMenuItems from '../services/getMenuItems';
 import './Menu.css';
-
-const caps = [
-	{
-		name: 'CSS',
-		to: '#',
-		icon: 'https://svgur.com/i/Uie.svg'
-	},
-	{
-		name: 'Giphy API',
-		to: '/gifs',
-		icon: 'https://cdn.worldvectorlogo.com/logos/giphy-logo-1.svg'
-	},
-	{
-		name: 'JavaScript',
-		to: '#',
-		icon: 'https://cdn.worldvectorlogo.com/logos/logo-javascript.svg'
-	},
-	{
-		name: 'P5js',
-		to: '/p5js',
-		icon: 'https://blindedcyclops.neocities.org/p5js-icons/p5-sq-reverse-filled.png'
-	}
-	
-	// {name: 'API on React',href: '#',icon: 'api.svg'},
-	// {name: 'Firebase',href: '#',icon: 'firebase.svg'},
-];
-const links = [
-	{
-		name: 'SocialStore',
-		href: 'https://www.socialstore.com.ar/',
-		icon: 'https://svgur.com/i/UkC.svg'
-	},
-	{
-		name: 'LinkedIn',
-		href: 'https://www.linkedin.com/in/franciscoelfers/',
-		icon: 'https://cdn.worldvectorlogo.com/logos/linkedin-icon-2.svg'
-	},
-	{
-		name: 'Github',
-		href: 'https://github.com/FranElfers',
-		icon: 'https://svgur.com/i/UkG.svg'
-	}
-]
+import Stars from './Stars';
 
 export default function Menu() {
-	const [ stars, setStars ] = useState([]);
+	const [ width, setWidth ] = useState(180);
+	const { caps, links } = getMenuItems();
 
 	useEffect(() => {
-		const amount = 15;
-		const width = document.getElementsByClassName('cap')[0].getBoundingClientRect().width;
-		// deberia agarrar el actual width del cap
-		const tempArray = [];
-
-		for (let i = 0; i < amount; i++) {
-			tempArray.push({
-				left: Math.random() * width,
-				top: Math.random() * width,
-				fontSize: Math.random() * 10 + 5
-			})
-		}
-		
-		setStars(tempArray);
+		setWidth(document.getElementsByClassName('cap')[0].getBoundingClientRect().width);
 	}, [])
-	// tengo que aleatorizar las estrellas de cada cap y ahora mismo no me da la cabeza
 
 	return <div className="App-center">
 		<div className="cap-container width1000">
 			{caps.map(({name,to,icon},i) => 
-				<Link to={to} className='cap' key={'link'+i}>
+				<Link to={to} className='cap' key={'cap'+i}>
 					<div className="cap">
 						<figure>
 							<div className='canvas'>
-								{stars.map(style=><div className="star" style={style}>•</div>)}
+								<Stars width={width} />
 							</div>
 							<img src={icon} />
 							<figcaption>{name}</figcaption>
@@ -82,11 +28,11 @@ export default function Menu() {
 				</Link>
 			)}
 			{links.map(({name,href,icon},i) => 
-				<a href={href} target="_blank" key={'a'+i}>
+				<a href={href} target="_blank" key={'link'+i}>
 					<div className="cap">
 						<figure>
 							<div className='canvas'>
-								{stars.map(style=><div className="star" style={style}>•</div>)}
+								<Stars width={width} />
 							</div>
 							<img src={icon} />
 							<figcaption>{name}</figcaption>

@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Link, useHistory } from "react-router-dom";
 import ListOfGifs from "./ListOfGifs";
 import './Gif.css';
-import Back from './Back';
+import Back from '../Back';
 
 
 export default function GifAPI() {

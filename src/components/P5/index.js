@@ -4,7 +4,7 @@ import Moon from './p5sketches/moon';
 import Bouncyball from './p5sketches/bouncyball';
 import Particle from './p5sketches/particle';
 import Flappy from './p5sketches/flappy';
-import Back from './Back';
+import Back from '../Back';
 // import Snake from './p5sketches/snake';
 
 export default function P5(props) {
