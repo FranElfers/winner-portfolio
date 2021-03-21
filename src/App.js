@@ -12,14 +12,16 @@ function App() {
   const [ inProp, setInProp ] = useState(false);
   return (
     <div className="App">
-      <Router>
-        <Switch>
-          <Route path="/gifs/" component={GifAPI} />
-          <Route path="/p5js/" component={P5} />
-          {/* el path '/' tiene que estar a lo ultimo */}
-          <Route path="/" component={Menu} /> 
-        </Switch>
-      </Router>
+      <div className="App-center">
+        <Router>
+          <Switch>
+            <Route path="/gifs/" component={GifAPI} />
+            <Route path="/p5js/" component={P5} />
+            {/* el path '/' tiene que estar a lo ultimo */}
+            <Route path="/" component={Menu} /> 
+          </Switch>
+        </Router>
+      </div>
     </div>
   );
 }
