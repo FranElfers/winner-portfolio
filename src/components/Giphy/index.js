@@ -3,26 +3,21 @@ import { Link, useHistory } from "react-router-dom";
 import ListOfGifs from "./ListOfGifs";
 import './Gif.css';
 import Back from '../Back';
+import useDebounce from "../useDebounce";
 
 
 export default function GifAPI() {
 	const [ keyword, setKeyword ] = useState('');
+	const [ loading, setLoading ] = useState(false);
   const history = useHistory();
+  const lastKeyword = useDebounce(keyword, 1000);
 
-  // // se ejecuta cada vez que se envie el formulario
-  // const handleSubmit = e => {
-  //   e.preventDefault();
-  //   history.push(`/gifs/${keyword}`);
-  //   console.log(keyword);
-  // }
-  let task;
-  const handleChange = e => {
-    clearTimeout(task);
-    task = setTimeout(() => {
-      // ejecutar busqueda
-      history.push(`/gifs/${keyword}`);
-      setKeyword(e.target.value);
-    }, 2000)
+  const handleChange = event => {
+    setLoading(true)
+    // ejecutar busqueda
+    history.push(`/gifs/${lastKeyword}`);
+    console.log('fetching ' + lastKeyword);
+    setKeyword(event.target.value);
   }
 
 	return <>
@@ -32,7 +27,7 @@ export default function GifAPI() {
 		</form>
 
 		<div id="listOfGifs">
-			<ListOfGifs keyword={keyword} />
+			<ListOfGifs keyword={keyword} loading={loading} setLoading={setLoading} />
 		</div>
 	</>
 }

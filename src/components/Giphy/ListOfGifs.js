@@ -3,8 +3,7 @@ import { useState, useEffect } from 'react';
 import getGifs from '../../services/getGifs';
 import Gif from './Gif';
 
-export default function ListOfGifs({ keyword }) {
-	const [ loading, setLoading ] = useState(false);
+export default function ListOfGifs({ keyword, loading, setLoading }) {
 	const [ gifs, setGifs ] = useState([]);
 	
   // Esto se ejecuta cada vez que el componente se renderiza
@@ -17,9 +16,7 @@ export default function ListOfGifs({ keyword }) {
   }, [keyword]);
 	// El segundo parametro es la dependencia
 
-	if (loading) {
-		return <span className="loading">⏳</span>
-	}
+	if (loading) return <span className="loading">⏳</span>
 	
 	return <> { 
 		gifs.map(({ id, title, url}) => 
