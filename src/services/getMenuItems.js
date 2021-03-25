@@ -20,6 +20,11 @@ export default function getMenuItems() {
 				name: 'P5js',
 				to: '/p5js',
 				icon: 'https://blindedcyclops.neocities.org/p5js-icons/p5-sq-reverse-filled.png'
+			},
+			{
+				name: 'Resume',
+				to: '/resume',
+				icon: 'https://www.svgrepo.com/show/301120/resume.svg'
 			}
 			
 			// {name: 'API on React',href: '#',icon: 'api.svg'},

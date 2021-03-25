@@ -9,11 +9,12 @@ import Back from '../Back';
 
 export default function P5(props) {
 	const width = 300;
+	const style = {margin:0};
 
 	return <>
 		<Back to="/" />
-		<h2>Scripts de alto consumo</h2>
-		<p>Pueden no correr en todos los dispositivos</p>
+		<h2 style={style}>Scripts de alto consumo</h2>
+		<p style={style}>Pueden no correr en todos los dispositivos</p>
 		<div className="p5grid">
 			<Moon width={width} />
 			<Rain width={width} />

@@ -1,7 +1,3 @@
-h2,p {
-  margin: 0;
-}
-
 .p5grid {
 	--grid-min-size: 300px;
   display: grid;

@@ -1,0 +1,121 @@
+#Resume {
+	width: 1030px;
+	max-width: 100%;
+	min-width: 50%;
+	z-index: 1;
+	
+	text-align: left;
+	font-size: .8em;
+	font-family: Roboto;
+	font-weight: 400;
+	letter-spacing: .2px;
+	line-height: 1.5em;
+	box-shadow: 0 0 40px black;
+	/* color: #ccc;
+	background: #282c34; */
+	color: #111;
+	background: #eee;
+}
+
+#Resume p {
+	margin-bottom: 20px;
+}
+
+#Resume a {
+	text-decoration: none;
+	color: inherit;
+}
+
+/* Padding stuff */
+#Resume > p, #Resume .body {
+	padding: 0 2%;
+}
+
+/* Header stuff */
+#Resume .header {
+	padding: 1px 20px 20px;
+	color: #eee;
+	background: #373D48;
+}
+
+#Resume h1, 
+#Resume h2,
+#Resume .left-content div {
+	font-family: 'Poppins';
+}
+
+#Resume h2 {
+	font-size: 1.3em;
+}
+
+#Resume .header pre {
+	white-space: nowrap;
+	margin: 5px 0;
+	font-weight: 300;
+}
+
+/* Body stuff */
+#Resume .body {
+	margin-top: 30px;
+}
+
+#Resume .snippet {
+	display: flex;
+}
+
+/* Left stuff */
+#Resume .left {
+	position: relative;
+	min-width: 30%;
+	padding: 35px 0;
+}
+
+#Resume .left-content {
+	display: flex;
+	position: sticky;
+	top: 30px;
+	white-space: nowrap;
+}
+
+#Resume .bar {
+	position: absolute;
+	width: 30px;
+	height: 100%;
+	left: 0;
+	top: 0;
+	border-right: 1px solid #40444e;
+}
+
+#Resume .left-content svg {
+	width: 60px;
+	height: 60px;
+}
+
+#Resume .left-content svg rect {
+	width: 30px;
+	height: 30px;
+	x: 15px;
+	y: 15px;
+	fill: black;
+	stroke: #40444e;
+	transform-box: fill-box;
+	transform-origin: center;
+	transform: rotate(45deg);
+}
+
+#Resume .left-content div {
+	margin-top: 15px;
+}
+
+/* Right stuff */
+#Resume .right {
+	padding: 30px;
+}
+
+#Resume .right p {
+	margin: 10px 0;
+}
+
+#Resume .right small {
+	color: #444;
+}
