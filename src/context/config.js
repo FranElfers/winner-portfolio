@@ -1,9 +1,10 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
+import usePersistedState from '../hooks/userPersistedState';
 
 const ConfigContext = React.createContext();
 
 export const ConfigProvider = ({ children }) => {
-    const [betterPerformance, setBetterPerformance] = useState(true);
+    const [betterPerformance, setBetterPerformance] = usePersistedState('betterPerformace', true);
 
     const toggleBetterPerformance = () => setBetterPerformance(!betterPerformance);
 

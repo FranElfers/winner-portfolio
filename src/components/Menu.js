@@ -9,12 +9,13 @@ import ConfigContext from '../context/config';
 export default function Menu() {
 	const { caps, links } = getMenuItems();
 	const { betterPerformance, toggleBetterPerformance } = useContext(ConfigContext);
+	const capClass = 'cap' + (betterPerformance ? ' light' : '');
 
 	return <>
 		<div className="cap-container width1000">
 			{caps.map(({name,to,icon},i) => 
 				<Link to={to} key={'cap'+i}>
-					<div className="cap light">
+					<div className={capClass}>
 						<figure>
 							<Stars />
 							<img src={icon} />
@@ -25,7 +26,7 @@ export default function Menu() {
 			)}
 			{links.map(({name,href,icon},i) => 
 				<a href={href} target="_blank" key={'link'+i}>
-					<div className="cap light">
+					<div className={capClass}>
 						<figure>
 							<Stars />
 							<img src={icon} />
@@ -43,7 +44,7 @@ export default function Menu() {
 		<AboutSection>
 			<div className="option">
 				<label htmlFor="performance">Better performance</label>
-				<input className="switch" id="performance" type="checkbox" onChange={toggleBetterPerformance} />
+				<input className="switch" id="performance" type="checkbox" checked={betterPerformance} onChange={toggleBetterPerformance} />
 			</div>
 		</AboutSection>
 	</>

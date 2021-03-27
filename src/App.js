@@ -16,15 +16,15 @@ function App() {
     <div className="App">
       <div className="App-center">
         <ConfigProvider>
-        <Router>
-          <Switch>
-            <Route path="/gifs/" component={GifAPI} />
-            <Route path="/p5js/" component={P5} />
-            <Route path="/resume" component={Resume} />
-            {/* el path '/' tiene que estar a lo ultimo */}
-            <Route path="/" component={Menu} /> 
-          </Switch>
-        </Router>
+          <Router>
+            <Switch>
+              <Route path="/gifs/" component={GifAPI} />
+              <Route path="/p5js/" component={P5} />
+              <Route path="/resume" component={Resume} />
+              {/* el path '/' tiene que estar a lo ultimo */}
+              <Route path="/" component={Menu} /> 
+            </Switch>
+          </Router>
         </ConfigProvider>
       </div>
     </div>
