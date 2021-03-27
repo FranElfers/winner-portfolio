@@ -1,19 +1,14 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import getMenuItems from '../services/getMenuItems';
 import AboutSection from './AboutSection/';
 import './Menu.css';
 import Stars from './Stars';
+import ConfigContext from '../context/config';
 
 export default function Menu() {
 	const { caps, links } = getMenuItems();
-
-	const togglePerformance = className => {
-		const caps = document.getElementsByClassName(className);
-		for (let i = 0; i < caps.length; i++) {
-			caps[i].classList.toggle('light')
-		}
-	}
+	const { betterPerformance, toggleBetterPerformance } = useContext(ConfigContext);
 
 	return <>
 		<div className="cap-container width1000">
@@ -48,7 +43,7 @@ export default function Menu() {
 		<AboutSection>
 			<div className="option">
 				<label htmlFor="performance">Better performance</label>
-				<input className="switch" id="performance" type="checkbox" onChange={()=>togglePerformance('cap')} />
+				<input className="switch" id="performance" type="checkbox" onChange={toggleBetterPerformance} />
 			</div>
 		</AboutSection>
 	</>

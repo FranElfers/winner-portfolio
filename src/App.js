@@ -6,6 +6,7 @@ import Menu from './components/Menu';
 import GifAPI from './components/Giphy/';
 import P5 from './components/P5/';
 import Resume from './components/Resume/';
+import { ConfigProvider } from './context/config';
 import { CSSTransition } from 'react-transition-group';
 
 
@@ -14,6 +15,7 @@ function App() {
   return (
     <div className="App">
       <div className="App-center">
+        <ConfigProvider>
         <Router>
           <Switch>
             <Route path="/gifs/" component={GifAPI} />
@@ -23,6 +25,7 @@ function App() {
             <Route path="/" component={Menu} /> 
           </Switch>
         </Router>
+        </ConfigProvider>
       </div>
     </div>
   );
