@@ -26,8 +26,7 @@
 	color: inherit;
 }
 
-/* Padding stuff */
-#Resume > p, #Resume .body {
+#Resume > p {
 	padding: 0 2%;
 }
 
@@ -64,10 +63,14 @@
 }
 
 /* Left stuff */
+:root {
+	--color: #39c339;
+}
+
 #Resume .left {
 	position: relative;
 	min-width: 30%;
-	padding: 35px 0;
+	padding: 25px 0;
 }
 
 #Resume .left-content {
@@ -83,7 +86,7 @@
 	height: 100%;
 	left: 0;
 	top: 0;
-	border-right: 1px solid #40444e;
+	border-right: 1px solid var(--color);
 }
 
 #Resume .left-content svg {
@@ -92,24 +95,35 @@
 }
 
 #Resume .left-content svg rect {
-	width: 30px;
-	height: 30px;
-	x: 15px;
-	y: 15px;
-	fill: black;
-	stroke: #40444e;
+	width: 34px;
+	height: 34px;
+	x: 12.5px;
+	y: 12.5px;
+	fill: #eee;
+	stroke: var(--color);
 	transform-box: fill-box;
 	transform-origin: center;
 	transform: rotate(45deg);
 }
 
+#Resume .left-content svg.icon {
+	position: absolute;
+	left: 19px;
+	width: 22px;
+}
+
 #Resume .left-content div {
-	margin-top: 15px;
+	line-height: 60px;
+	white-space: initial;
 }
 
 /* Right stuff */
 #Resume .right {
 	padding: 30px;
+}
+
+#Resume .right article {
+	margin-bottom: 40px;
 }
 
 #Resume .right p {
@@ -118,4 +132,12 @@
 
 #Resume .right small {
 	color: #444;
+}
+
+#Resume .right ul {
+	margin: 2% 0;
+}
+
+#Resume .right li::marker {
+	color: var(--color)
 }
