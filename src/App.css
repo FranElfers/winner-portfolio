@@ -50,4 +50,5 @@ footer {
   left: 10px;
   text-decoration: none;
   color: white;
+  z-index: 10;
 }

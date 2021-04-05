@@ -31,15 +31,15 @@ const icons = [faAddressBook,faBath,faShower,faThermometerHalf,faBalanceScale,fa
 // Seguro que se puede resumir sin tener que importar todo fontawesome de una
 
 export default function MovingIconsBackground() {
+	const iconRow = () => icons
+		.sort((a,b)=>.5-Math.random()) // Aleatorizar orden
+		.map(icon=> <FontAwesomeIcon key={icon.iconName} icon={icon} />)
+
 	return <section>
-		{[...Array(20)].map((i) => 
+		{[...Array(20)].map((e,i) => 
 			<div key={i} className="row">
-				{[1,2].map(e => <div key={e}>
-					{icons
-						.sort((a,b)=>.5-Math.random()) // Aleatorizar orden
-						.map(icon=><FontAwesomeIcon key={icon.name} icon={icon} />)
-					}
-				</div>)}
+				<div>{iconRow()}</div>
+				<div>{iconRow()}</div>
 			</div>
 		)}
 	</section>

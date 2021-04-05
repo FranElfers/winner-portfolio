@@ -1,35 +1,23 @@
-import React, { useEffect, useState } from 'react';
+import { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import getMenuItems from '../services/getMenuItems';
 import AboutSection from './AboutSection/';
 import './Menu.css';
 import Stars from './Stars';
+import ConfigContext from '../context/config'
 
 export default function Menu() {
-	const [ width, setWidth ] = useState(180);
 	const { caps, links } = getMenuItems();
-
-	const togglePerformance = className => {
-		const caps = document.getElementsByClassName(className);
-		for (let i = 0; i < caps.length; i++) {
-			caps[i].classList.toggle('light')
-		}
-	}
-
-	useEffect(() => {
-		setWidth(document.getElementsByClassName('cap')[0].getBoundingClientRect().width);
-	}, [])
-	
+	const { performance, togglePerformance } = useContext(ConfigContext)
+	const capClass = 'cap' + (performance ? ' light' : '');
 
 	return <>
 		<div className="cap-container width1000">
 			{caps.map(({name,to,icon},i) => 
 				<Link to={to} key={'cap'+i}>
-					<div className="cap light">
+					<div className={capClass}>
 						<figure>
-							<div className='canvas'>
-								<Stars width={width} />
-							</div>
+							<Stars />
 							<img src={icon} />
 							<figcaption>{name}</figcaption>
 						</figure>
@@ -38,11 +26,9 @@ export default function Menu() {
 			)}
 			{links.map(({name,href,icon},i) => 
 				<a href={href} target="_blank" key={'link'+i}>
-					<div className="cap light">
+					<div className={capClass}>
 						<figure>
-							<div className='canvas'>
-								<Stars width={width} />
-							</div>
+							<Stars />
 							<img src={icon} />
 							<figcaption>{name}</figcaption>
 						</figure>
@@ -58,7 +44,7 @@ export default function Menu() {
 		<AboutSection>
 			<div className="option">
 				<label htmlFor="performance">Better performance</label>
-				<input className="switch" id="performance" type="checkbox" onChange={()=>togglePerformance('cap')} />
+				<input className="switch" id="performance" type="checkbox" checked={performance} onChange={togglePerformance} />
 			</div>
 		</AboutSection>
 	</>
