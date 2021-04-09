@@ -12,6 +12,7 @@ export default function Menu() {
 	const capClass = 'cap' + (performance ? ' light' : '');
 
 	return <>
+		<h1>Francisco Elfers</h1>
 		<div className="cap-container width1000">
 			{caps.map(({name,to,icon},i) => 
 				<Link to={to} key={'cap'+i}>
