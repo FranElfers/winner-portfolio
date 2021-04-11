@@ -13,7 +13,7 @@ import Back from '../Back';
 
 firebase.initializeApp({
   apiKey: "AIzaSyD8BiP7qD-JIdUt6N1mDhCOyXzF4qBsuTc",
-  authDomain: "canban-20f7d.firebaseapp.com",
+  authDomain: "franciscoelfers.netlify.app",
   projectId: "canban-20f7d",
   storageBucket: "canban-20f7d.appspot.com",
   messagingSenderId: "888630049073",
