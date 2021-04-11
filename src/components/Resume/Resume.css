@@ -5,7 +5,7 @@
 	z-index: 1;
 	
 	text-align: left;
-	font-size: .8em;
+	/* font-size: .8em; */
 	font-family: Roboto;
 	font-weight: 400;
 	letter-spacing: .2px;
@@ -69,7 +69,7 @@
 
 #Resume .left {
 	position: relative;
-	min-width: 30%;
+	width: 30%;
 	padding: 25px 0;
 }
 
@@ -140,4 +140,16 @@
 
 #Resume .right li::marker {
 	color: var(--color)
+}
+
+@media only screen and (max-width: 700px) {
+	#Resume .left-content div {
+		display: none;
+	}
+	#Resume .right {
+		padding: 10px;
+	}
+	#Resume section {
+		display: none;
+	}
 }

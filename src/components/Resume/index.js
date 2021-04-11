@@ -13,6 +13,10 @@ const faBriefcasePro = <svg aria-hidden="true" focusable="false" data-prefix="fa
 
 const faPuzzlePiecePro = <svg aria-hidden="true" focusable="false" data-prefix="fal" data-icon="puzzle-piece" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" className="icon svg-inline--fa fa-puzzle-piece fa-w-18 fa-7x"><path fill="currentColor" d="M506.584 256c-52.307 0-72.012 46.513-87.263 27.506-20.125-25.082-2.028-107.233 3.475-131.942-34.229 6.371-137.243 24.274-163.836 2.178-16.619-13.81 31.313-43.496 31.313-86.443C290.272 26.025 256.447 0 214.842 0c-43.559 0-84.792 25.609-84.792 68.824 0 53.02 45.898 71.605 24.351 88.606C125.985 179.846 35.346 160.524 0 152.041v345.313c33.315 8.012 70.681 14.649 106.163 14.646 42.28 0 85.837-11.839 85.837-54.125 0-29.344-32-40.832-32-73.875 0-24.437 22.534-32 46.978-32C245.675 352 256 372.114 256 384c0 28.783-34.272 36.348-34.272 76.58 0 13.748 5.013 25.445 14.498 33.828 35.153 31.069 106.717 6.319 187.085 6.285-.958-3.426-26.807-86.724-7.702-111.907 16.715-22.023 48.578 29.106 92.52 29.106C550.227 417.893 576 377.616 576 336c0-42.835-26.227-80-69.416-80zm1.544 129.893c-30.002 0-41.364-33.893-81.513-33.893-53.566 0-54.841 64.979-44.272 117.816-36.396 3.424-107.025 16.434-124.926.614C237.293 452.645 288 428.279 288 384c0-37.683-33.317-64-81.022-64-74.981 0-102.885 59.829-56.167 122.037 4.726 6.293 9.189 12.237 9.189 15.838 0 33.69-94.005 20.629-128 13.925V191.971c63.255 11.657 160 18.136 160-46.505 0-28.567-29.95-42.982-29.95-76.642C162.05 44.146 190.265 32 214.842 32c20.035 0 43.43 9.244 43.43 35.298 0 29.426-34.272 40.752-34.272 80.61 0 57.828 100.845 50.931 158.22 43.093C374.142 245.294 373.959 320 429.086 320c29.143 0 43.674-32 77.498-32C531.543 288 544 311.301 544 336c0 34.413-20.977 49.893-35.872 49.893z"></path></svg>
 
+const faTools = <svg aria-hidden="true" focusable="false" data-prefix="fal" data-icon="tools" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" className="icon"><path fill="currentColor" d="M502.6 389.5L378.2 265c-15.6-15.6-36.1-23.4-56.6-23.4-15.4 0-30.8 4.4-44.1 13.3L192 169.4V96L64 0 0 64l96 128h73.4l85.5 85.5c-20.6 31.1-17.2 73.3 10.2 100.7l124.5 124.5c6.2 6.2 14.4 9.4 22.6 9.4 8.2 0 16.4-3.1 22.6-9.4l67.9-67.9c12.4-12.6 12.4-32.8-.1-45.3zM160 158.1v1.9h-48L42.3 67 67 42.3l93 69.7v46.1zM412.1 480L287.7 355.5c-9.1-9.1-14.1-21.1-14.1-33.9 0-12.8 5-24.9 14.1-33.9 9.1-9.1 21.1-14.1 33.9-14.1 12.8 0 24.9 5 33.9 14.1L480 412.1 412.1 480zM64 432c0 8.8 7.2 16 16 16s16-7.2 16-16-7.2-16-16-16-16 7.2-16 16zM276.8 66.9C299.5 44.2 329.4 32 360.6 32c6.9 0 13.8.6 20.7 1.8L312 103.2l13.8 83 83.1 13.8 69.3-69.3c6.7 38.2-5.3 76.8-33.1 104.5-8.9 8.9-19.1 16-30 21.5l23.6 23.6c10.4-6.2 20.2-13.6 29-22.5 37.8-37.8 52.7-91.4 39.7-143.3-2.3-9.5-9.7-17-19.1-19.6-9.5-2.6-19.7 0-26.7 7l-63.9 63.9-44.2-7.4-7.4-44.2L410 50.3c6.9-6.9 9.6-17.1 7-26.5-2.6-9.5-10.2-16.8-19.7-19.2C345.6-8.3 292 6.5 254.1 44.3c-12.9 12.9-22.9 27.9-30.1 44v67.8l22.1 22.1c-9.6-40.4 1.6-82.2 30.7-111.3zM107 467.1c-16.6 16.6-45.6 16.6-62.2 0-17.1-17.1-17.1-45.1 0-62.2l146.1-146.1-22.6-22.6L22.2 382.3c-29.6 29.6-29.6 77.8 0 107.5C36.5 504.1 55.6 512 75.9 512c20.3 0 39.4-7.9 53.7-22.3L231.4 388c-6.7-9.2-11.8-19.3-15.5-29.8L107 467.1z"></path></svg>
+
+const faChartLine = <svg aria-hidden="true" focusable="false" data-prefix="fal" data-icon="chart-line" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" className="icon"><path fill="currentColor" d="M504 416H32V72c0-4.42-3.58-8-8-8H8c-4.42 0-8 3.58-8 8v360c0 8.84 7.16 16 16 16h488c4.42 0 8-3.58 8-8v-16c0-4.42-3.58-8-8-8zM98.34 263.03c-3.12 3.12-3.12 8.19 0 11.31l11.31 11.31c3.12 3.12 8.19 3.12 11.31 0l72.69-72.01 84.69 84.69c6.25 6.25 16.38 6.25 22.63 0l93.53-93.53 44.04 44.04c4.95 4.95 11.03 7.16 17 7.16 12.48 0 24.46-9.7 24.46-24.34V112.19c0-8.94-7.25-16.19-16.19-16.19H344.34c-21.64 0-32.47 26.16-17.17 41.46l44.71 44.71-82.22 82.22-84.63-84.63c-6.23-6.23-16.32-6.25-22.57-.05l-84.12 83.32zM362.96 128H448v85.04L362.96 128z"></path></svg>
+
 const faPaintBrushPro = <FontAwesomeIcon icon={faPaintBrush} className="icon" />
 
 function Snippet({title, icon, children}) {
@@ -44,11 +48,11 @@ export default function Resume() {
 				<h2>Fron-end Developer</h2>				
 				<pre><FontAwesomeIcon icon={faMobileAlt} /> +5491131988960</pre>
 				<pre><FontAwesomeIcon icon={faAt} /> franelfers@hotmail.com</pre>
-				<pre><FontAwesomeIcon icon={faLinkedinIn} /> <a target="_blank" href="https://www.linkedin.com/in/franciscoelfers">linkedin.com/in/franciscoelfers</a></pre>
+				<pre><FontAwesomeIcon icon={faLinkedinIn} /> <a target="_blank" href="https://www.linkedin.com/in/franciscoelfers">linkedin / franciscoelfers</a></pre>
 				<pre><FontAwesomeIcon icon={faMapMarkedAlt} /> Buenos Aires, Argentina</pre>
 			</div>
 
-			<p style={{textAlign: 'justify'}}>IT professional with over 10 years of experience specializing in IT department management for international logistics companies. I can implement effective IT strategies at local and global levels. My greatest strenght is business awareness, which enables me to permanently streamline infrastructure and applications. Seeking to leverage my skills at SanCorp Inc.</p>
+			<p>React trainee con 1 año de experiencia de Frontend, usando React, Vue.js, Figma, Vanilla CSS y JS. Actualmente cursando "ReactJs" en CoderHouse. Buscando convertirme en MERN fullstack developer.</p>
 			<div className="body">
 				<Snippet title="Educación" icon={faGraduationCapPro}>
 					<article>
@@ -93,15 +97,13 @@ export default function Resume() {
 					<article>
 						<p>Adobe</p>
 						<ul>
-							<li>Premiere Pro <small>3 años</small></li>
-							<li>After Effects <small>3 años</small></li>
-							<li>Photoshop <small>6 años</small></li>
-							<li>Lightroom</li>
-							<li>Illustrator</li>
+							<li>Figma</li>
+							<li>Premiere Pro </li>
+							<li>Photoshop</li>
 						</ul>
 					</article>
 				</Snippet>
-				<Snippet title="Servicio Técnico" >
+				<Snippet title="Servicio Técnico" icon={faTools}>
 					<article>
 						<p>Computadoras de escritorio.</p>
 						<ul>
@@ -118,7 +120,7 @@ export default function Resume() {
 					<p>Conversación informal en inglés.</p>
 					<p>Mentalidad adaptativa de programador.</p>
 				</Snippet>
-				<Snippet title="Metas">
+				<Snippet title="Metas" icon={faChartLine}>
 					<p>"MERN" Full Stack developer</p>
 					<p>Typescript</p>
 					<p>Docker</p>

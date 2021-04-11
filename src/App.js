@@ -6,6 +6,7 @@ import Menu from './components/Menu';
 import GifAPI from './components/Giphy/';
 import P5 from './components/P5/';
 import Resume from './components/Resume/';
+import Canban from './components/Canban'
 import { ConfigProvider } from './context/config';
 
 function App() {
@@ -19,6 +20,7 @@ function App() {
               <Route path="/gifs/" component={GifAPI} />
               <Route path="/p5js/" component={P5} />
               <Route path="/resume" component={Resume} />
+              <Route path="/canban" component={Canban} />
               {/* el path '/' tiene que estar a lo ultimo */}
               <Route path="/" component={Menu} /> 
             </Switch>

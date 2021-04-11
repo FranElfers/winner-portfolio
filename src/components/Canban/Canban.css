@@ -1,0 +1,58 @@
+section#canban {
+  max-width: 800px;
+  padding: 20px;
+  border: 2px solid #3b414d;
+  border-radius: 10px;
+}
+
+#canban form {
+  display: flex;
+  align-items: center;
+}
+
+#canban input, #canban button {
+  height: 40px;
+  border: none;
+  border-radius: 5px;
+  background: transparent;
+  color: #d7d7d7;
+  transition: background .15s ease;
+}
+
+#canban input:focus, #canban button:hover {
+  background: #3b414d;
+}
+
+#canban input, #canban .nota p {
+  width: 100%;
+  margin-right: 6px;
+  text-align: left;
+  font-size: 20px;
+}
+
+#canban input {
+  border: 2px solid #3b414d;
+}
+
+#canban button {
+  width: 100%;
+  cursor: pointer;
+}
+
+#canban .nota {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+#canban form button, #canban .nota button {
+  width: 40px;
+  font-size: 20px;
+}
+
+#brand {
+	position: absolute;
+	bottom: 5px;
+	left: 10px;
+  color: #fff2
+}
