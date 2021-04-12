@@ -12,13 +12,13 @@ import { useCollectionData } from 'react-firebase-hooks/firestore';
 import Back from '../Back';
 
 firebase.initializeApp({
-  apiKey: "AIzaSyD8BiP7qD-JIdUt6N1mDhCOyXzF4qBsuTc",
-  authDomain: "franciscoelfers.netlify.app",
-  projectId: "canban-20f7d",
-  storageBucket: "canban-20f7d.appspot.com",
-  messagingSenderId: "888630049073",
-  appId: "1:888630049073:web:7c537ea9ad8a87c8391810",
-  measurementId: "G-4CQFD5EHTF"
+  apiKey: process.env.REACT_APP_FIREBASE_APIKEY,
+  authDomain: process.env.REACT_APP_FIREBASE_AUTHDOMAIN,
+  projectId: process.env.REACT_APP_FIREBASE_PROJECTID,
+  storageBucket: process.env.REACT_APP_FIREBASE_STORAGEBUCKET,
+  messagingSenderId: process.env.REACT_APP_FIREBASE_MESSAGINGSENDERID,
+  appId: process.env.REACT_APP_FIREBASE_APPID,
+  measurementId: process.env.REACT_APP_FIREBASE_MEASUREMENTID
 })
 
 const auth = firebase.auth();
