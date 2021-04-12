@@ -35,7 +35,7 @@ export default function MovingIconsBackground() {
 		.sort((a,b)=>.5-Math.random()) // Aleatorizar orden
 		.map(icon=> <FontAwesomeIcon key={icon.iconName} icon={icon} />)
 
-	return <section>
+	return <section id="moving-icons">
 		{[...Array(20)].map((e,i) => 
 			<div key={i} className="row">
 				<div>{iconRow()}</div>
