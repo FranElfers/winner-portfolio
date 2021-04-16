@@ -3,7 +3,7 @@ import { Link, useHistory } from "react-router-dom";
 import ListOfGifs from "./ListOfGifs";
 import './Gif.css';
 import Back from '../Back';
-import useDebounce from "../useDebounce";
+import useDebounce from "../../hooks/useDebounce";
 
 
 export default function GifAPI() {

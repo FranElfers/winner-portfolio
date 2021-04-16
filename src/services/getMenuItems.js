@@ -26,11 +26,11 @@ export default function getMenuItems() {
 				to: '/resume',
 				icon: 'https://www.svgrepo.com/show/301120/resume.svg'
 			},
-			{
-				name: 'Canban',
-				to: '/canban',
-				icon: 'https://firebase.google.com/downloads/brand-guidelines/SVG/logo-logomark.svg'
-			}
+			// {
+			// 	name: 'Canban',
+			// 	to: '/canban',
+			// 	icon: 'https://firebase.google.com/downloads/brand-guidelines/SVG/logo-logomark.svg'
+			// }
 			
 			// {name: 'API on React',href: '#',icon: 'api.svg'},
 			// {name: 'Firebase',href: '#',icon: 'firebase.svg'},

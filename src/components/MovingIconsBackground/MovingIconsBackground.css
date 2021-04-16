@@ -71,3 +71,7 @@ section#moving-icons .row:nth-child(even) div:nth-child(2) {
 	0% {transform: translateX(0%)}
 	100% {transform: translateX(-200%)}
 }
+
+@media screen and (max-width: 768px) {
+	section#moving-icons {display: none}
+}

@@ -8,8 +8,8 @@ const usePersistedState = (name, defaultValue) => {
 	useEffect(() => {
 		try {
 			const storedValue = localStorage.getItem(name);
-			if (storedValue !== null) setValue(storedValue);
-			else localStorage.setItem(name, defaultValue)
+			if (storedValue !== null) setValue(JSON.parse(storedValue));
+			else localStorage.setItem(name, JSON.stringify(defaultValue))
 		} catch {
 			setValue(defaultValue)
 		}
