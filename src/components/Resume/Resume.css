@@ -1,155 +1,214 @@
-#Resume {
-	width: 1030px;
-	max-width: 100%;
-	min-width: 50%;
-	z-index: 1;
-	
+:root {
+	--tip-left: 0px;
+	--tip-top: 0px;
+}
+
+::-webkit-scrollbar {
+	width: 0px;
+}	
+
+.App {
+	padding: 0;
+}
+
+#Resume * {
 	text-align: left;
-	/* font-size: .8em; */
-	font-family: Roboto;
+	font-family: 'Roboto';
 	font-weight: 400;
-	letter-spacing: .2px;
-	line-height: 1.5em;
-	box-shadow: 0 0 40px black;
-	/* color: #ccc;
-	background: #282c34; */
-	color: #111;
-	background: #eee;
-}
+}		
 
-#Resume p {
-	margin-bottom: 20px;
-}
+#Resume {
+	width: 100vw;
+	padding-top: 50px;
+	margin: 0;
+	overflow-x: hidden;
+	background: #fff;
+}	
 
-#Resume a {
-	text-decoration: none;
-	color: inherit;
-}
+#Resume .balls {
+	position: fixed;
+	width: 100vw;
+	height: 100vh;
+	opacity: .4;
+}	
 
-#Resume > p {
-	padding: 0 2%;
-}
+#Resume .balls div {
+	position: absolute;
+	height: 300px;
+	width: 300px;
+	border-radius: 50%;
+	transform: translate3d(0px, 0px, 0px);
+}	
 
-/* Header stuff */
-#Resume .header {
-	padding: 1px 20px 20px;
-	color: #eee;
-	background: #373D48;
-}
+#Resume .ball1 {
+	left: 70%;
+	box-shadow: 0px 0px 20px #F37034;
+	background: linear-gradient(0deg, #e82265 0%, #ffc100 100%)
+}	
+
+#Resume .ball2 {
+	right: 70%;
+	box-shadow: 0px 0px 20px #28CD94;
+	background: linear-gradient(0deg, #2ffe3d 0%, #229bed 100%);
+}	
+
+@media screen and (max-width: 768px) {
+	#Resume .balls div {
+		box-shadow: none;
+	}	
+	#Resume {
+		padding: 0;
+	}	
+}	
+
+#Resume .content {
+	position: relative;
+	padding: 15px 15px 100px;
+	margin: 0 auto 100px;
+	max-width: 700px;
+	border-radius: 10px;
+	border: 1px solid #fff2;
+	background: #fff1;
+}	
+
+/* Font sizes */
+#Resume h1 { font-size: 40px }
+#Resume h2 { font-size: 30px }
+#Resume h3 { font-size: 23px }
+#Resume p { font-size: 20px }
+
+/* Margins */
+#Resume h2 { margin-bottom: 40px }
+#Resume h3 { margin: 40px 0 5px }
 
 #Resume h1, 
-#Resume h2,
-#Resume .left-content div {
-	font-family: 'Poppins';
-}
-
 #Resume h2 {
-	font-size: 1.3em;
-}
+	font-family: 'Montserrat';
+}	
 
-#Resume .header pre {
-	white-space: nowrap;
+#Resume h1, 
+#Resume h2, 
+#Resume h4 {
+	text-align: center;
+}	
+
+#Resume h1, 
+#Resume h2, 
+#Resume h3, 
+#Resume h4 {
+	color: #2C2C2C;
+}	
+
+#Resume h1 {
+	color: #000
+}	
+
+#Resume p, 
+#Resume .dropdown {
+	margin: 0;
+	line-height: 30px;
+	color: #636363;
+}	
+
+
+#Resume hr {
+	margin: 60px 0;
+	height: 3px;
+	border: none;
+	border-radius: 3px;
+	background: linear-gradient(90deg, #00D1FF 0%,#00FF94 100%)
+}	
+
+/* Titulo */
+#Resume .title {
+	margin: 50px 0 100px;
+}	
+
+#Resume .title h1, 
+#Resume .title h4 {
 	margin: 5px 0;
-	font-weight: 300;
-}
+}	
 
-/* Body stuff */
-#Resume .body {
-	margin-top: 30px;
-}
+/* Dropdown */
+#Resume .dropdown svg {
+	width: 15px;
+	margin: 0 10px;
+	transform: rotate(0deg);
+	transition: transform .1s ease-in-out;
+}	
 
-#Resume .snippet {
+#Resume .dropdown ul {
+	display: none;
+}	
+
+#Resume .dropdown.active svg {
+	transform: rotate(-180deg)
+}	
+
+#Resume .dropdown.active ul {
+	display: block;
+}	
+
+/* Menu interactivo */
+#Resume .interactive .icons {
 	display: flex;
-}
+	justify-content: space-evenly;
+}	
 
-/* Left stuff */
-:root {
-	--color: #39c339;
-}
+#Resume .interactive .icons img {
+	width: 50px;
+	transition: transform .1s ease;
+}	
 
-#Resume .left {
-	position: relative;
-	width: 30%;
-	padding: 25px 0;
-}
+#Resume .interactive .icons img:hover {
+	transform: scale(1.05)
+}	
 
-#Resume .left-content {
-	display: flex;
-	position: sticky;
-	top: 30px;
-	white-space: nowrap;
-}
+#Resume .interactive .info {
+	height: 52px;
+	margin-top: 50px;
+	
+	font-size: 20px;
+	text-align: center;
+	line-height: 52px;
+	
+	border-radius: 4px;
+	color: #fafafa;
+	background: #30ACC7;
+	box-shadow: 0px 6px 20px -10px rgb(0 0 0 / 55%);
+	transition: background .3s ease-in-out;
+}	
 
-#Resume .bar {
+#Resume .interactive .info::after {
+	content: '';
 	position: absolute;
-	width: 30px;
-	height: 100%;
-	left: 0;
-	top: 0;
-	border-right: 1px solid var(--color);
-}
-
-#Resume .left-content svg {
-	width: 60px;
-	height: 60px;
-}
-
-#Resume .left-content svg rect {
-	width: 34px;
-	height: 34px;
-	x: 12.5px;
-	y: 12.5px;
-	fill: #eee;
-	stroke: var(--color);
-	transform-box: fill-box;
-	transform-origin: center;
+	top: var(--tip-top);
+	left: var(--tip-left);
+	height: 20px;
+	width: 20px;
 	transform: rotate(45deg);
+	background: inherit;
+	transition: left .3s ease-in-out;
 }
 
-#Resume .left-content svg.icon {
-	position: absolute;
-	left: 19px;
-	width: 22px;
+
+/* Dark mode */
+#Resume.dark p, 
+#Resume.dark .dropdown {
+	color: #b7b7b7;
 }
 
-#Resume .left-content div {
-	line-height: 60px;
-	white-space: initial;
+#Resume.dark h1, 
+#Resume.dark h2, 
+#Resume.dark h3, 
+#Resume.dark h4 {
+	color: #fff
 }
 
-/* Right stuff */
-#Resume .right {
-	padding: 30px;
+#Resume.dark h1 {
+	color: #fff
 }
 
-#Resume .right article {
-	margin-bottom: 40px;
-}
-
-#Resume .right p {
-	margin: 10px 0;
-}
-
-#Resume .right small {
-	color: #444;
-}
-
-#Resume .right ul {
-	margin: 2% 0;
-}
-
-#Resume .right li::marker {
-	color: var(--color)
-}
-
-@media only screen and (max-width: 700px) {
-	#Resume .left-content div {
-		display: none;
-	}
-	#Resume .right {
-		padding: 10px;
-	}
-	#Resume section {
-		display: none;
-	}
+#Resume.dark {
+	background: #171725
 }
