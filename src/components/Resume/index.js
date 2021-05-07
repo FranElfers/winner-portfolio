@@ -1,7 +1,3 @@
-import MovingIconsBackground from '../MovingIconsBackground/'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faLinkedinIn } from '@fortawesome/free-brands-svg-icons'
-import { faAt, faMapMarkedAlt, faMobileAlt, faPaintBrush } from '@fortawesome/free-solid-svg-icons';
 import Back from '../Back'
 import React, { useRef, useEffect } from 'react';
 import './Resume.css'
@@ -68,10 +64,14 @@ export default function Resume() {
 	useEffect(() => {
 		scrollOrbs()
 		window.onscroll = scrollOrbs
+		return () => {
+			window.onscroll = null
+		}
 	}, [])
 	
 
 	return <div id="Resume" className="dark">
+		<Back to="/" />
 		<div className="balls">
 			<div className="ball1" ref={ball1}></div>
 			<div className="ball2" ref={ball2}></div>
