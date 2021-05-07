@@ -77,6 +77,7 @@
 #Resume h2 { font-size: 30px }
 #Resume h3 { font-size: 23px }
 #Resume p { font-size: 20px }
+#Resume .dropdown { font-size: 20px }
 
 /* Margins */
 #Resume h2 { margin-bottom: 40px }
