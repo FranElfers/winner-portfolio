@@ -33,7 +33,9 @@ const Interactive = () => {
 	useEffect(() => {
 		window.onload = move
 		window.onresize = move
-	}, [selected])
+	}, [])
+
+	useEffect(move, [selected])
 
 	return <div className="interactive">
 		<div className="icons">

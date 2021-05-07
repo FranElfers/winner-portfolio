@@ -38,6 +38,7 @@
 	width: 300px;
 	border-radius: 50%;
 	transform: translate3d(0px, 0px, 0px);
+	-webkit-transform: translate3d(0px, 0px, 0px);
 }	
 
 #Resume .ball1 {
@@ -130,19 +131,23 @@
 }	
 
 /* Dropdown */
+#Resume .dropdown {
+	cursor: pointer;
+}
+
 #Resume .dropdown svg {
 	width: 15px;
 	margin: 0 10px;
 	transform: rotate(0deg);
-	transition: transform .1s ease-in-out;
 }	
 
 #Resume .dropdown ul {
 	display: none;
+	cursor: default;
 }	
 
 #Resume .dropdown.active svg {
-	transform: rotate(-180deg)
+	transform: rotate(-180deg);
 }	
 
 #Resume .dropdown.active ul {
@@ -159,10 +164,12 @@
 	width: 50px;
 	height: 50px;
 	transition: transform .1s ease;
+	-webkit-transition: transform .1s ease;
 }	
 
 #Resume .interactive .icons img:hover {
-	transform: scale(1.05)
+	transform: scale(1.05);
+	-webkit-transform: scale(1.05);
 }	
 
 #Resume .interactive .info {
@@ -178,6 +185,7 @@
 	background: #30ACC7;
 	box-shadow: 0px 6px 20px -10px rgb(0 0 0 / 55%);
 	transition: background .3s ease-in-out;
+	-webkit-transition: background .3s ease-in-out;
 }	
 
 #Resume .interactive .info::after {
@@ -187,9 +195,11 @@
 	left: var(--tip-left);
 	height: 20px;
 	width: 20px;
-	transform: rotate(45deg);
 	background: inherit;
+	transform: rotate(45deg);
 	transition: left .3s ease-in-out;
+	-webkit-transform: rotate(45deg);
+	-webkit-transition: left .3s ease-in-out;
 }
 
 
