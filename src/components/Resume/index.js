@@ -31,8 +31,8 @@ const Interactive = () => {
 	}
 
 	useEffect(() => {
-		move()
-		window.onresize = () => move()
+		window.onload = move
+		window.onresize = move
 	}, [selected])
 
 	return <div className="interactive">
