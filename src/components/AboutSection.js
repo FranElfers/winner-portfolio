@@ -1,4 +1,4 @@
-import './AboutSection.css'
+import './styles/AboutSection.css'
 
 export default function AboutSection({children}) {
 	// h1 for title, h3 for subtitle, p for content

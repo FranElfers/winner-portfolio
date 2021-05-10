@@ -1,0 +1,94 @@
+/* container */
+.cap-container {
+	--grid-min-size: 150px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(var(--grid-min-size), 1fr));
+  grid-gap: 10px;
+}
+
+/* New Caps */
+
+.cap {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-between;
+
+	padding: 10px;
+	height: 250px;
+
+	cursor: default;
+	text-decoration: none;
+	border-radius: 10px;
+	background: linear-gradient(156deg, #3b3953 50%, #302736 100%);
+	box-shadow: 0px 9px 20px 7px #24262b;
+
+	/* Vanilla tilt */
+	transform-style: preserve-3d;
+	transform: perspective(1000px);
+}
+
+.cap svg {
+	transform: translateZ(50px) translateY(10px);
+}
+
+.cap img {
+  margin: 10px;
+	width: 60%;
+  transform: translateZ(50px) translateY(10px);
+}
+
+.cap circle {
+  stroke-width: 10;
+  fill: transparent;
+  cx: 70;
+  cy: 70;
+  
+  transition: stroke-dashoffset .3s;
+  transform: rotate(-90deg);
+  transform-origin: 50% 50%;
+  
+  filter: drop-shadow(0px 0px 3px #74E7CB);
+}
+
+.cap h1 {
+  margin: 10px 0;
+  font-size: 25px;
+  font-weight: 500;
+  
+  background: -webkit-linear-gradient(270deg, #74A2E7 0%, #74E7CB 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  
+  filter: drop-shadow(0px 0px 3px #74E7CB)
+}
+
+.cap button {
+  width: 100%;
+  padding: 10px 0;
+  cursor: pointer;
+  color: #ececec;
+  border: 1px solid #ececec;
+  border-radius: 6px;
+  background: transparent;
+}
+
+.cap button:hover {
+  background: #ffffff0a;
+}
+
+/* Stars */
+
+.cap .stars {
+  position: absolute;
+  width: 100%;
+  height: 50%;
+	font-family: 'Roboto';
+	font-weight: 400;
+  color: #8d8d8d;
+  z-index: -1;
+}
+
+.cap .stars div {
+  position: absolute;
+}

@@ -1,4 +1,4 @@
-import './Canban.css';
+import './styles/Canban.css';
 import { useState } from 'react';
 
 // Firebase SDK
@@ -9,7 +9,7 @@ import 'firebase/auth';
 // Hooks
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { useCollectionData } from 'react-firebase-hooks/firestore';
-import Back from '../Back';
+import Back from './Back';
 
 firebase.initializeApp({
   apiKey: 'AIzaSyD8BiP7qD-JIdUt6N1mDhCOyXzF4qBsuTc',

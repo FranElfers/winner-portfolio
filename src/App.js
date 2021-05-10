@@ -1,16 +1,16 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 // react-router-dom no tiene 'Router', eso es de react-router.
 import './App.css';
 import Menu from './components/Menu';
 import GifAPI from './components/Giphy/';
-import P5 from './components/P5/';
-import Resume from './components/Resume/';
+import P5 from './components/P5';
+import Resume from './components/Resume';
 import Canban from './components/Canban'
 import { ConfigProvider } from './context/config';
 
 function App() {
-  const [ inProp, setInProp ] = useState(false);
+  const [ inProp, setInProp ] = React.useState(false);
   return (
     <div className="App">
       <div className="App-center">

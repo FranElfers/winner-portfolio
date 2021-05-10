@@ -1,41 +1,54 @@
-import { useContext } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import getMenuItems from '../services/getMenuItems';
-import AboutSection from './AboutSection/';
-import './Menu.css';
+import AboutSection from './AboutSection';
+import './styles/Menu.css';
 import Stars from './Stars';
 import ConfigContext from '../context/config'
+import VanillaTilt from 'vanilla-tilt'
+import MenuCard from './MenuCard';
+
+const SvgProgress = ({ first, last }) => {
+	return <svg width="140" height="140">
+		<circle r="50" stroke={`url(#${first+last})`} />
+		<defs>
+			<linearGradient id={first+last} >
+				<stop offset="0%" stopColor={'#' + first} />
+				<stop offset="100%" stopColor={'#' + last} />
+			</linearGradient>
+		</defs>
+	</svg>
+}
 
 export default function Menu() {
 	const { caps, links } = getMenuItems();
-	const { performance, togglePerformance } = useContext(ConfigContext)
+	const { performance, togglePerformance } = React.useContext(ConfigContext)
 	const capClass = 'cap' + (performance ? ' light' : '');
+
 
 	return <>
 		<h1>Francisco Elfers</h1>
 		<div className="cap-container width1000">
 			{caps.map(({name,to,icon},i) => 
-				<Link to={to} key={'cap'+i}>
-					<div className={capClass}>
-						<figure>
-							<Stars />
-							<img src={icon} />
-							<figcaption>{name}</figcaption>
-						</figure>
-					</div>
-				</Link>
+				<MenuCard key={'cap'+i} link={to} title={name} className={capClass} >
+					<img src={icon} />
+				</MenuCard>
 			)}
+
 			{links.map(({name,href,icon},i) => 
-				<a href={href} target="_blank" key={'link'+i}>
-					<div className={capClass}>
-						<figure>
-							<Stars />
-							<img src={icon} />
-							<figcaption>{name}</figcaption>
-						</figure>
-					</div>
-				</a>
+				<MenuCard href={href} target="_blank" key={'link'+i} title={name} className={capClass}>
+					<img src={icon} />
+				</MenuCard>
 			)}
+
+			<MenuCard link="/" progress={100} title="CSS">
+				<SvgProgress first="74A2E7" last="74E7CB" />
+			</MenuCard>
+
+			<MenuCard link="/" progress={80} title="JavaScript" >
+				<SvgProgress first="74A2E8" last="74E7CB" />
+			</MenuCard>
+			
 		</div>
 
 		<AboutSection>
