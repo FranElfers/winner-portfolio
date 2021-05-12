@@ -1,11 +1,8 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import getMenuItems from '../services/getMenuItems';
 import AboutSection from './AboutSection';
 import './styles/Menu.css';
-import Stars from './Stars';
 import ConfigContext from '../context/config'
-import VanillaTilt from 'vanilla-tilt'
 import MenuCard from './MenuCard';
 
 const SvgProgress = ({ first, last }) => {
@@ -36,16 +33,16 @@ export default function Menu() {
 			)}
 
 			{links.map(({name,href,icon},i) => 
-				<MenuCard href={href} target="_blank" key={'link'+i} title={name} className={capClass}>
+				<MenuCard link={href} target="_blank" key={'link'+i} title={name} className={capClass}>
 					<img src={icon} />
 				</MenuCard>
 			)}
 
-			<MenuCard link="/" progress={100} title="CSS">
+			<MenuCard progress={100} title="CSS">
 				<SvgProgress first="74A2E7" last="74E7CB" />
 			</MenuCard>
 
-			<MenuCard link="/" progress={80} title="JavaScript" >
+			<MenuCard progress={80} title="JavaScript" >
 				<SvgProgress first="74A2E8" last="74E7CB" />
 			</MenuCard>
 			

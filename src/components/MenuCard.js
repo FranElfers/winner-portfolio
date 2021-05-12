@@ -25,6 +25,7 @@ export default function MenuCard({ link, progress, title, children }) {
 
 	}, [])
 
+
 	if (link?.startsWith('https')) return <a href={link} target="_blank" className="cap" ref={cardRef}>
 		<Stars />
 		{children}
