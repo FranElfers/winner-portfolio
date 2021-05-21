@@ -15,7 +15,7 @@ export default function P5(props) {
 		<Back to="/" />
 		<h2 style={style}>Scripts de alto consumo</h2>
 		<p style={style}>Pueden no correr en todos los dispositivos</p>
-		<div className="p5grid">
+		<div className="p5grid width1000">
 			<Moon width={width} />
 			<Rain width={width} />
 			<Bouncyball width={width} />

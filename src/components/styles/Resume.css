@@ -7,10 +7,6 @@
 	width: 0px;
 }	
 
-.App {
-	padding: 0;
-}
-
 #Resume * {
 	text-align: left;
 	font-family: 'Roboto';
@@ -20,7 +16,7 @@
 #Resume {
 	width: 100vw;
 	padding-top: 50px;
-	margin: 0;
+	margin: -10px 0;
 	overflow-x: hidden;
 	background: #fff;
 }	
