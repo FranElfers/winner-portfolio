@@ -52,3 +52,8 @@ footer {
   color: white;
   z-index: 10;
 }
+
+#back svg:hover {
+  border-radius: 50%;
+  background: #fff1;
+}
