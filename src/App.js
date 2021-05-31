@@ -10,7 +10,6 @@ import Canban from './components/Canban'
 import { ConfigProvider } from './context/config';
 
 function App() {
-  const [ inProp, setInProp ] = React.useState(false);
   return (
     <div className="App">
       <div className="App-center">

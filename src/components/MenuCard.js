@@ -8,7 +8,6 @@ export default function MenuCard({ link, progress, children }) {
 	const { performance } = React.useContext(ConfigContext)
 	const cardRef = React.useRef()
 
-
 	const setProgress = (self, percent) => {
 		const radius = self.r.baseVal.value
 		const circumference = radius * 2 * Math.PI
@@ -17,7 +16,6 @@ export default function MenuCard({ link, progress, children }) {
 		self.style.strokeDashoffset = `${circumference}`
 		self.style.strokeDashoffset = circumference - percent / 100 * circumference
 	}
-
 
 	React.useEffect(() => {
 		const options = { max: 10, speed: 400 }

@@ -4,7 +4,7 @@ import './styles/Menu.css';
 import ConfigContext from '../context/config'
 import MenuCard from './MenuCard';
 
-const SvgProgress = ({ title, first, last, shine }) => {
+const SvgProgress = ({ first, last, shine }) => {
 	const style = {
 		filter: `drop-shadow(0px 0px 3px #${shine})`,
 		background: `-webkit-linear-gradient(270deg, #${first} 0%, #${last} 100%)`,
@@ -24,7 +24,7 @@ const SvgProgress = ({ title, first, last, shine }) => {
 	</>
 }
 
-const ShinyTitle = ({ children, shine="FFFFFF", first="FFFFFF", last="FFFFFF", button = true }) => {
+const ShinyTitle = ({ children, shine="FFFFFF", first="FFFFFF", last="FFFFFF", button=true, out=false }) => {
 	const style = {
 		filter: `drop-shadow(0px 0px 3px #${shine})`,
 		background: `-webkit-linear-gradient(270deg, #${first} 0%, #${last} 100%)`,
@@ -33,13 +33,12 @@ const ShinyTitle = ({ children, shine="FFFFFF", first="FFFFFF", last="FFFFFF", b
 
 	return <>
 		<h1 style={style}>{children}</h1>
-		{ button && <button>View more</button>}
+		{button && <button>{ out ? 'Visit ⨠' : 'View more'}</button>}
 	</>
 }
 
 export default function Menu() {
 	const { performance, togglePerformance } = React.useContext(ConfigContext)
-
 
 	return <>
 		<h1>Francisco Elfers</h1>
@@ -61,37 +60,22 @@ export default function Menu() {
 
 			<MenuCard link="/canban">
 				<img src="https://www.vectorlogo.zone/logos/firebase/firebase-icon.svg" alt="firebase logo" />
-				<ShinyTitle>Canban with firebase</ShinyTitle>
+				<ShinyTitle first="FFCA28" last="FFA000" shine="FFCA28">Canban</ShinyTitle>
 			</MenuCard>
 
 			<MenuCard link="https://www.socialstore.com.ar/" target="_blank" >
 				<img src="https://svgur.com/i/UkC.svg" />
-				<ShinyTitle>SocialStore</ShinyTitle>
+				<ShinyTitle out={true}>SocialStore</ShinyTitle>
 			</MenuCard>
 
 			<MenuCard link="https://www.linkedin.com/in/franciscoelfers/" target="_blank" >
 				<img src="https://cdn.worldvectorlogo.com/logos/linkedin-icon-2.svg" />
-				<ShinyTitle>LinkedIn</ShinyTitle>
+				<ShinyTitle first="ffffff" last="0099cc" shine="006699" out={true}>LinkedIn</ShinyTitle>
 			</MenuCard>
 
 			<MenuCard link="https://github.com/FranElfers" target="_blank" >
 				<img src="https://svgur.com/i/UkG.svg" />
-				<ShinyTitle>Github</ShinyTitle>
-			</MenuCard>
-
-			<MenuCard progress={60} shine="74E7CB">
-				<SvgProgress first="74A2E7" last="74E7CB" shine="74E7CB" title="CSS" />
-				<ShinyTitle first="74A2E7" last="74E7CB" shine="74E7CB" button={false} >CSS</ShinyTitle>
-			</MenuCard>
-
-			<MenuCard progress={50} shine="E7AB74">
-				<SvgProgress first="E6DB74" last="E7AB74" shine="E7AB74" title="JavaScript" />
-				<ShinyTitle first="E6DB74" last="E7AB74" shine="E7AB74" button={false} >JavaScript</ShinyTitle>
-			</MenuCard>
-
-			<MenuCard progress={70} shine="E7AB74">
-				<SvgProgress first="61DAFB" last="74B0E7" shine="74E7CB" title="React" />
-				<ShinyTitle first="61DAFB" last="74B0E7" shine="74E7CB" button={false} >React</ShinyTitle>
+				<ShinyTitle out={true}>Github</ShinyTitle>
 			</MenuCard>
 
 			<MenuCard link="https://www.codewars.com/users/FranElfers" shine="E7AB74">
@@ -127,12 +111,27 @@ export default function Menu() {
 						</linearGradient>
 					</defs>
 				</svg>
-				<ShinyTitle first="E6DB74" last="E7AB74" shine="E7AB74" >Codewars</ShinyTitle>
+				<ShinyTitle first="E6DB74" last="E7AB74" shine="E7AB74" out={true} >Codewars</ShinyTitle>
 			</MenuCard>
 
 			<MenuCard link="https://codepen.io/franelfers" >
 				<img src="https://cpwebassets.codepen.io/assets/favicon/logo-pin-8f3771b1072e3c38bd662872f6b673a722f4b3ca2421637d5596661b4e2132cc.svg" alt="codepen logo" />
-				<ShinyTitle>Codepen</ShinyTitle>
+				<ShinyTitle out={true}>Codepen</ShinyTitle>
+			</MenuCard>
+
+			<MenuCard progress={60} shine="74E7CB">
+				<SvgProgress first="74A2E7" last="74E7CB" shine="74E7CB" title="CSS" />
+				<ShinyTitle first="74A2E7" last="74E7CB" shine="74E7CB" button={false} >CSS</ShinyTitle>
+			</MenuCard>
+
+			<MenuCard progress={50} shine="E7AB74">
+				<SvgProgress first="E6DB74" last="E7AB74" shine="E7AB74" title="JavaScript" />
+				<ShinyTitle first="E6DB74" last="E7AB74" shine="E7AB74" button={false} >JavaScript</ShinyTitle>
+			</MenuCard>
+
+			<MenuCard progress={70} shine="E7AB74">
+				<SvgProgress first="61DAFB" last="74B0E7" shine="74E7CB" title="React" />
+				<ShinyTitle first="61DAFB" last="74B0E7" shine="74E7CB" button={false} >React</ShinyTitle>
 			</MenuCard>
 					
 		</div>
