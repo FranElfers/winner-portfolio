@@ -24,3 +24,4 @@ yarn-error.log*
 .obsidian/config
 .obsidian/workspace
 Seguimiento.md
+.env
