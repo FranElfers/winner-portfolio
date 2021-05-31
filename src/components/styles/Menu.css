@@ -55,12 +55,9 @@
   margin: 10px 0;
   font-size: 25px;
   font-weight: 500;
-  
-  background: -webkit-linear-gradient(270deg, #74A2E7 0%, #74E7CB 100%);
+ 
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  
-  filter: drop-shadow(0px 0px 3px #74E7CB)
 }
 
 .cap button {

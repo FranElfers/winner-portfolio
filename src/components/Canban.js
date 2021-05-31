@@ -1,5 +1,9 @@
+// Add authorized domain:
+// https://www.skies.dev/firebase-auth-domain#add-authorized-domains-to-firebase-auth
+
 import './styles/Canban.css';
 import { useState } from 'react';
+import Back from './Back';
 
 // Firebase SDK
 import firebase from 'firebase/app';
@@ -9,11 +13,10 @@ import 'firebase/auth';
 // Hooks
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { useCollectionData } from 'react-firebase-hooks/firestore';
-import Back from './Back';
 
 firebase.initializeApp({
   apiKey: 'AIzaSyD8BiP7qD-JIdUt6N1mDhCOyXzF4qBsuTc',
-  authDomain: 'canban-20f7d.firebaseapp.com',
+  authDomain: 'franciscoelfers.com',
   projectId: 'canban-20f7d',
   storageBucket: 'canban-20f7d.appspot.com',
   messagingSenderId: '888630049073',
@@ -50,7 +53,7 @@ function SignIn() {
 
 function SignOut() {
   return auth.currentUser && (
-    <button onClick={() => auth.signOut()}>Sign Out</button>
+    <button className="signout" onClick={() => auth.signOut()}>Sign Out</button>
   )
 }
 
@@ -85,7 +88,7 @@ function Dashboard() {
   return (
     <>
       <div>
-        {notes && notes.map(note => <NoteList key={note.id} data={note} />)}
+        {notes && notes.map(note => <NoteList key={note.id} data={note} />) || '⏳'}
       </div>
       <form onSubmit={sendNote}>
         <input value={formValue} onChange={e => setFormValue(e.target.value)} />

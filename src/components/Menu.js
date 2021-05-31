@@ -1,5 +1,4 @@
 import React from 'react';
-import getMenuItems from '../services/getMenuItems';
 import AboutSection from './AboutSection';
 import './styles/Menu.css';
 import ConfigContext from '../context/config'
@@ -25,7 +24,7 @@ const SvgProgress = ({ title, first, last, shine }) => {
 	</>
 }
 
-const ShinyTitle = ({ children, shine, first, last, button = true }) => {
+const ShinyTitle = ({ children, shine="FFFFFF", first="FFFFFF", last="FFFFFF", button = true }) => {
 	const style = {
 		filter: `drop-shadow(0px 0px 3px #${shine})`,
 		background: `-webkit-linear-gradient(270deg, #${first} 0%, #${last} 100%)`,
@@ -39,28 +38,46 @@ const ShinyTitle = ({ children, shine, first, last, button = true }) => {
 }
 
 export default function Menu() {
-	const { caps, links } = getMenuItems();
 	const { performance, togglePerformance } = React.useContext(ConfigContext)
 
 
 	return <>
 		<h1>Francisco Elfers</h1>
 		<div className="cap-container width1000">
-			{caps.map(({name,to,icon},i) => 
-				<MenuCard key={'cap'+i} link={to} title={name}>
-					<img src={icon} />
-					<h1>{name}</h1>
-					<button>View more</button>
-				</MenuCard>
-			)}
+			<MenuCard link="/gifs" >
+				<img src="https://cdn.worldvectorlogo.com/logos/giphy-logo-1.svg" alt="giphy logo" />
+				<ShinyTitle>Giphy API</ShinyTitle>
+			</MenuCard>
 
-			{links.map(({name,href,icon},i) => 
-				<MenuCard link={href} target="_blank" key={'link'+i} title={name}>
-					<img src={icon} />
-					<h1>{name}</h1>
-					<button>View more</button>
-				</MenuCard>
-			)}
+			<MenuCard link="/p5js" >
+				<img src="https://blindedcyclops.neocities.org/p5js-icons/p5-sq-reverse-filled.png" alt="p5js logo" />
+				<ShinyTitle>P5js</ShinyTitle>
+			</MenuCard>
+
+			<MenuCard link="/resume" >
+				<img src="https://www.svgrepo.com/show/301120/resume.svg" alt="resume logo" />
+				<ShinyTitle>Resume</ShinyTitle>
+			</MenuCard>
+
+			<MenuCard link="/canban">
+				<img src="https://www.vectorlogo.zone/logos/firebase/firebase-icon.svg" alt="firebase logo" />
+				<ShinyTitle>Canban with firebase</ShinyTitle>
+			</MenuCard>
+
+			<MenuCard link="https://www.socialstore.com.ar/" target="_blank" >
+				<img src="https://svgur.com/i/UkC.svg" />
+				<ShinyTitle>SocialStore</ShinyTitle>
+			</MenuCard>
+
+			<MenuCard link="https://www.linkedin.com/in/franciscoelfers/" target="_blank" >
+				<img src="https://cdn.worldvectorlogo.com/logos/linkedin-icon-2.svg" />
+				<ShinyTitle>LinkedIn</ShinyTitle>
+			</MenuCard>
+
+			<MenuCard link="https://github.com/FranElfers" target="_blank" >
+				<img src="https://svgur.com/i/UkG.svg" />
+				<ShinyTitle>Github</ShinyTitle>
+			</MenuCard>
 
 			<MenuCard progress={60} shine="74E7CB">
 				<SvgProgress first="74A2E7" last="74E7CB" shine="74E7CB" title="CSS" />
@@ -115,9 +132,9 @@ export default function Menu() {
 
 			<MenuCard link="https://codepen.io/franelfers" >
 				<img src="https://cpwebassets.codepen.io/assets/favicon/logo-pin-8f3771b1072e3c38bd662872f6b673a722f4b3ca2421637d5596661b4e2132cc.svg" alt="codepen logo" />
-				<ShinyTitle first="FFFFFF" last="FFFFFF" shine="FFFFFF">Codepen</ShinyTitle>
+				<ShinyTitle>Codepen</ShinyTitle>
 			</MenuCard>
-			
+					
 		</div>
 
 		<AboutSection>
