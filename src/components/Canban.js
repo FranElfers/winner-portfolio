@@ -16,7 +16,7 @@ import { useCollectionData } from 'react-firebase-hooks/firestore';
 
 firebase.initializeApp({
   apiKey: 'AIzaSyD8BiP7qD-JIdUt6N1mDhCOyXzF4qBsuTc',
-  authDomain: 'canban-20f7d.firebaseapp.com.com',
+  authDomain: 'canban-20f7d.firebaseapp.com',
   projectId: 'canban-20f7d',
   storageBucket: 'canban-20f7d.appspot.com',
   messagingSenderId: '888630049073',
@@ -47,7 +47,9 @@ function SignIn() {
   }
 
   return (
-    <button onClick={signInWithGoogle}>Sign in with Google</button>
+    <button className="signin" onClick={signInWithGoogle}>
+      <img src="https://cdn.worldvectorlogo.com/logos/google-icon.svg" alt="google logo" />
+    </button>
   )
 }
 
