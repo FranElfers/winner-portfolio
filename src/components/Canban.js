@@ -16,7 +16,7 @@ import { useCollectionData } from 'react-firebase-hooks/firestore';
 
 firebase.initializeApp({
   apiKey: 'AIzaSyD8BiP7qD-JIdUt6N1mDhCOyXzF4qBsuTc',
-  authDomain: 'franciscoelfers.com',
+  authDomain: 'canban-20f7d.firebaseapp.com.com',
   projectId: 'canban-20f7d',
   storageBucket: 'canban-20f7d.appspot.com',
   messagingSenderId: '888630049073',
