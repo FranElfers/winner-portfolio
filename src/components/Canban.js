@@ -15,13 +15,13 @@ import { useAuthState } from 'react-firebase-hooks/auth';
 import { useCollectionData } from 'react-firebase-hooks/firestore';
 
 firebase.initializeApp({
-  apiKey: process.env.REACT_APP_FIREBASE_APIKEY,
-  authDomain: process.env.REACT_APP_FIREBASE_AUTHDOMAIN,
-  projectId: process.env.REACT_APP_FIREBASE_PROJECTID,
-  storageBucket: process.env.REACT_APP_FIREBASE_STORAGEBUCKET,
-  messagingSenderId: process.env.REACT_APP_FIREBASE_MESSAGINGSENDERID,
-  appId: process.env.REACT_APP_FIREBASE_APPID,
-  measurementId: process.env.REACT_APP_FIREBASE_MEASUREMENTID
+  apiKey: 'AIzaSyD8BiP7qD-JIdUt6N1mDhCOyXzF4qBsuTc',
+  authDomain: 'canban-20f7d.firebaseapp.com',
+  projectId: 'canban-20f7d',
+  storageBucket: 'canban-20f7d.appspot.com',
+  messagingSenderId: '888630049073',
+  appId: '1:888630049073:web:7c537ea9ad8a87c8391810',
+  measurementId: 'G-4CQFD5EHTF'
 })
 
 const auth = firebase.auth();
