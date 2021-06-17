@@ -45,7 +45,7 @@ export default function Menu() {
 		<h1>Francisco Elfers</h1>
 		<div className="cap-container width1000">
 			<MenuCard link="/gifs" >
-				<img src={logos + '/giphy.svg'} alt="giphy logo" />
+				<img src={logos + 'giphy.svg'} alt="giphy logo" />
 				<ShinyTitle>Giphy API</ShinyTitle>
 			</MenuCard>
 

@@ -48,7 +48,7 @@ function SignIn() {
 
   return (
     <button className="signin" onClick={signInWithGoogle}>
-      <img src={process.env.PUBLIC_URL + '/google.svg'} alt="google logo" />
+      <img src={process.env.PUBLIC_URL + '/logos/google.svg'} alt="google logo" />
     </button>
   )
 }
