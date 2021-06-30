@@ -117,6 +117,15 @@
 	background: linear-gradient(90deg, #00D1FF 0%,#00FF94 100%)
 }	
 
+/* Links */
+#Resume a {
+	color: #60cfe5;
+}
+
+#Resume a:focus {
+	color: #0f6576;
+}
+
 /* Titulo */
 #Resume .title {
 	margin: 50px 0 100px;

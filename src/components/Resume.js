@@ -112,8 +112,8 @@ export default function Resume() {
 
 			<h2>Educacion</h2>
 			<h3>ReactJs</h3>
-			<p>Actualmente cursando ReactJs en Coderhouse.com</p>
-			<p>Febrero 2021 - mayo 2021</p>
+			<p>Curso completo de ReactJs en Coderhouse.com</p>
+			<p>Febrero 2021 - mayo 2021 | <a target="_blank" href="https://www.coderhouse.com/certificados/60987ca796ee55000f382bd9">Certificado</a></p>
 			<div className="dropdown" onClick={dropdown}>
 				<svg viewBox="0 0 448 512"><path fill="url(#linear)" d="M441.9 167.3l-19.8-19.8c-4.7-4.7-12.3-4.7-17 0L224 328.2 42.9 147.5c-4.7-4.7-12.3-4.7-17 0L6.1 167.3c-4.7 4.7-4.7 12.3 0 17l209.4 209.4c4.7 4.7 12.3 4.7 17 0l209.4-209.4c4.7-4.7 4.7-12.3 0-17z"></path>
 				</svg>Más información
@@ -138,6 +138,8 @@ export default function Resume() {
 			<h2>Experiencia</h2>
 			<h3>Co-fundador de socialstore.com.ar</h3>
 			<p>E-Commerce con VueJs y vanilla CSS; </p>
+			<h3>Tutor en Coderhouse.com</h3>
+			<p>En el curso de ReactJs</p>
 			<h3>185 horas en desarrollo web con Python</h3>
 			<p>Django, Bootstrap, DataTables, adminLTE, jQuery</p>
 			<h3>Profesor particular de python</h3>
