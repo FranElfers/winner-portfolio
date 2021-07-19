@@ -105,7 +105,7 @@ export default function Resume() {
 
 
 			<h2>Resumen</h2>
-			<p>React trainee con 1 año de experiencia de Frontend, usando React, Vue.js, Figma, Vanilla CSS y JS. Actualmente cursando "ReactJs" en CoderHouse. Buscando convertirme en MERN fullstack developer. Apasionado por la optimización.</p>
+			<p>React trainee con 1 año de experiencia de Frontend, usando React, Vue.js, Figma, Vanilla CSS y JS. Actualmente cumpliendo el rol de tutor en el curso de "ReactJs" en CoderHouse. Buscando convertirme en MERN fullstack developer. Apasionado por la optimización.</p>
 
 
 			<hr />
