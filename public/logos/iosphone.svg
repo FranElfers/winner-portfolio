@@ -1,0 +1,16 @@
+<svg width="736" height="736" viewBox="0 0 736 736" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="Phone icon">
+<rect id="bg" width="736" height="736" rx="173" fill="url(#paint0_linear)"/>
+<path id="phone" d="M417.5 463C345 438 294 383 270.5 334L305 285L264 190H218C129.5 253 175 351 274.5 453C389 555 510 576 557.5 500.5L563.5 455.5L471 410L417.5 463Z" fill="url(#paint1_linear)"/>
+</g>
+<defs>
+<linearGradient id="paint0_linear" x1="368" y1="0" x2="368" y2="736" gradientUnits="userSpaceOnUse">
+<stop stop-color="#00EA66"/>
+<stop offset="1" stop-color="#00D50F"/>
+</linearGradient>
+<linearGradient id="paint1_linear" x1="367.123" y1="190" x2="367.123" y2="545.777" gradientUnits="userSpaceOnUse">
+<stop stop-color="white"/>
+<stop offset="1" stop-color="#E5F5D9"/>
+</linearGradient>
+</defs>
+</svg>

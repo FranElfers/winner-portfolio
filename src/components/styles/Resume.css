@@ -180,12 +180,14 @@
 }	
 
 #Resume .interactive .info {
+	display: block;
 	height: 52px;
 	margin-top: 50px;
 	
 	font-size: 20px;
 	text-align: center;
 	line-height: 52px;
+	text-decoration: none;
 	
 	border-radius: 4px;
 	color: #fafafa;

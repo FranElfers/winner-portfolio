@@ -2,25 +2,24 @@ import Back from './Back'
 import React, { useRef, useEffect } from 'react';
 import './styles/Resume.css'
 
-
-const imagesUrl = [
-	"https://svgshare.com/i/XAv.svg",
-	"https://svgshare.com/i/XBU.svg",
-	"https://svgshare.com/i/Wf9.svg",
-	"https://svgshare.com/i/XBZ.svg"
-]
-
+// const imagesUrl = [
+// 	"https://svgshare.com/i/XAv.svg",
+// 	"https://svgshare.com/i/XBU.svg",
+// 	"https://svgshare.com/i/Wf9.svg",
+// 	"https://svgshare.com/i/XBZ.svg"
+// ]
 
 const Interactive = () => {
 	const [ selected, setSelected ] = React.useState(0)
 	const cssRoot = document.documentElement.style
 	const info = useRef()
+	const logo = x => `${process.env.PUBLIC_URL}/logos/${x}.svg`
 
 	const data = [
-		{element: useRef(), text: 'fransozzan@gmail.com', color: '#64B2FF'},
-		{element: useRef(), text: 'Buenos Aires, Argentina', color: '#ea4335'},
-		{element: useRef(), text: '+5491131988960', color: '#00d81b'},
-		{element: useRef(), text: 'linkedin / franciscoelfers', color: '#0b86ca'}
+		{element: useRef(), img: logo('iosmail'), text: 'fransozzan@gmail.com', color: '#64B2FF', url: '#'},
+		{element: useRef(), img: logo('iosmaps'), text: 'Buenos Aires, Argentina', color: '#ea4335', url: '#'},
+		{element: useRef(), img: logo('iosphone'), text: '+5491131988960', color: '#00d81b', url: '#'},
+		{element: useRef(), img: logo('ioslinkedin'), text: 'linkedin / franciscoelfers', color: '#0b86ca', url: 'https://www.linkedin.com/in/franciscoelfers/'}
 	]
 
 	const move = () => {
@@ -29,6 +28,7 @@ const Interactive = () => {
 		cssRoot.setProperty('--tip-left',x.element.current.offsetLeft + 15 + 'px')
 		info.current.style.background = x.color
 		info.current.innerText = x.text
+		info.current.href = x.url
 	}
 
 	useEffect(() => {
@@ -44,17 +44,17 @@ const Interactive = () => {
 
 	return <div className="interactive">
 		<div className="icons">
-			{imagesUrl.map((url,i) => <img 
-				key={url} 
-				src={url} 
-				ref={data[i].element} 
+			{data.map(({ img, element }, i) => <img 
+				key={img} 
+				src={img} 
+				ref={element} 
 				onClick={() => setSelected(i)} 
 			/> )}
 		</div>
 			
-		<div className="info" ref={info} >
+		<a className="info" ref={info} target="_blank">
 			fransozzan@gmail.com
-		</div>
+		</a>
 	</div>
 }
 
@@ -66,8 +66,16 @@ export default function Resume() {
 	const dropdown = e => e.target.classList.toggle('active')
 
 	const scrollOrbs = () => {
-		ball1.current.style.top = `${-window.scrollY*.2+100}px`
-		ball2.current.style.top = `${-window.scrollY*.2+700}px`
+		const v1 = `translateY(${-window.scrollY * .2 + 100}px)`
+		const v2 = `translateY(${-window.scrollY * .2 + 700}px)`
+		
+		ball1.current.style.transform = v1
+		ball1.current.style.webkitTransform = v1
+		ball1.current.style.mozTransform = v1
+
+		ball2.current.style.transform = v2
+		ball2.current.style.webkitTransform = v2
+		ball2.current.style.mozTransform = v2
 	}
 
 	useEffect(() => {
@@ -105,7 +113,7 @@ export default function Resume() {
 
 
 			<h2>Resumen</h2>
-			<p>React trainee con 1 año de experiencia de Frontend, usando React, Vue.js, Figma, Vanilla CSS y JS. Actualmente cursando "ReactJs" en CoderHouse. Buscando convertirme en MERN fullstack developer. Apasionado por la optimización.</p>
+			<p>Front End Developer con 2 años de experiencia y 1 año en React, con conocimientos en NodeJs, Vue.js, Firebase, Figma, Vanilla CSS y ES6. Calificación 10 en el curso "ReactJs" de CoderHouse y actualmente tutor del mismo. Buscando convertirme en MERN fullstack developer. Apasionado por la optimización.</p>
 
 
 			<hr />
