@@ -52,7 +52,7 @@ const Interactive = () => {
 			/> )}
 		</div>
 			
-		<a className="info" ref={info} target="_blank">
+		<a className="info" ref={info}>
 			fransozzan@gmail.com
 		</a>
 	</div>
