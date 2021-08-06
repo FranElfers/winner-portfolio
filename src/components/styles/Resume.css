@@ -139,18 +139,16 @@
 	margin: 5px 0;
 }	
 
-#Resume .PDF {
+#Resume .PDF, #Resume .PDF:focus {
 	margin-top: 15px;
 	padding: 5px 10px;
 	text-decoration: none;
+	font-size: 20px;
 	color: inherit;
 	border-radius: 5px;
 	border: 2px solid lightblue;
 }
 
-#Resume .PDF:focus {
-	color: inherit;
-}
 
 /* Dropdown */
 #Resume .dropdown {

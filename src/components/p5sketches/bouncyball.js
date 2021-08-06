@@ -2,6 +2,7 @@ import Sketch from 'react-p5';
 
 export default function Bouncyball({width}) {
 	let topaltura = [], ball, mouseDown;
+	let zone = document.querySelector('#defaultCanvas2');
 	
 	const setup = function(p5,parent){
 		p5.canvas = p5.createCanvas(width,width).parent(parent);
@@ -26,10 +27,21 @@ export default function Bouncyball({width}) {
 		p5.text(velocidad, 20, 40);
 		p5.text('Altura maxima: ' + p5.max(topaltura), 20,60);
 
-		document.body.onmousedown = () => mouseDown = true;
-		document.body.onmouseup = () => mouseDown = false;
-		document.body.ontouchstart = () => mouseDown = true;
-		document.body.ontouchend = () => mouseDown = false;
+		// Si el canvas cargo en el html, activa los eventos, sino sigue intentando obtener el canvas
+		if (zone) {
+			zone.onmousedown = () => mouseDown = true;
+			zone.onmouseup = () => mouseDown = false;
+			zone.ontouchstart = e => {
+				if(e.cancelable) e.preventDefault()
+				mouseDown = true;
+			}
+			zone.ontouchend = e => {
+				if(e.cancelable) e.preventDefault()
+				mouseDown = false;
+			}
+		} else {
+			zone = document.querySelector('#defaultCanvas2')
+		}
 	}
 	
 	const Ball = function(p5){

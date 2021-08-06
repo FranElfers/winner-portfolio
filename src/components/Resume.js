@@ -104,7 +104,7 @@ export default function Resume() {
 			<div className="title">
 				<h1>Francisco Elfers</h1>
 				<h4>Front-end Developer</h4>
-				<a class="PDF" href="/FranciscoElfers.pdf" target="_blank">↓ PDF ↓</a>
+				<a className="PDF" href="/FranciscoElfers.pdf" target="_blank">PDF</a>
 			</div>
 
 
