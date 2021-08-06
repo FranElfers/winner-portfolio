@@ -16,10 +16,10 @@ const Interactive = () => {
 	const logo = x => `${process.env.PUBLIC_URL}/logos/${x}.svg`
 
 	const data = [
-		{element: useRef(), img: logo('iosmail'), text: 'fransozzan@gmail.com', color: '#64B2FF', url: '#'},
-		{element: useRef(), img: logo('iosmaps'), text: 'Buenos Aires, Argentina', color: '#ea4335', url: '#'},
-		{element: useRef(), img: logo('iosphone'), text: '+5491131988960', color: '#00d81b', url: '#'},
-		{element: useRef(), img: logo('ioslinkedin'), text: 'linkedin / franciscoelfers', color: '#0b86ca', url: 'https://www.linkedin.com/in/franciscoelfers/'}
+		{element: useRef(), img: logo('iosmail'), text: 'fransozzan@gmail.com', color: '#64B2FF'},
+		{element: useRef(), img: logo('iosmaps'), text: 'Buenos Aires, Argentina', color: '#ea4335'},
+		{element: useRef(), img: logo('iosphone'), text: '+5491131988960', color: '#00d81b'},
+		{element: useRef(), img: logo('ioslinkedin'), text: '<a href="https://www.linkedin.com/in/franciscoelfers" target="_blank">linkedin / franciscoelfers</a>', color: '#0b86ca'}
 	]
 
 	const move = () => {
@@ -27,8 +27,7 @@ const Interactive = () => {
 		cssRoot.setProperty('--tip-top',info.current.offsetTop - 10 + 'px')
 		cssRoot.setProperty('--tip-left',x.element.current.offsetLeft + 15 + 'px')
 		info.current.style.background = x.color
-		info.current.innerText = x.text
-		info.current.href = x.url
+		info.current.innerHTML = x.text
 	}
 
 	useEffect(() => {
@@ -52,9 +51,9 @@ const Interactive = () => {
 			/> )}
 		</div>
 			
-		<a className="info" ref={info}>
+		<div className="info" ref={info}>
 			fransozzan@gmail.com
-		</a>
+		</div>
 	</div>
 }
 
