@@ -128,6 +128,9 @@
 
 /* Titulo */
 #Resume .title {
+	display: flex;
+	align-items: center;
+	flex-direction: column;
 	margin: 50px 0 100px;
 }	
 
@@ -135,6 +138,19 @@
 #Resume .title h4 {
 	margin: 5px 0;
 }	
+
+#Resume .PDF {
+	margin-top: 15px;
+	padding: 5px 10px;
+	text-decoration: none;
+	color: inherit;
+	border-radius: 5px;
+	border: 2px solid lightblue;
+}
+
+#Resume .PDF:focus {
+	color: inherit;
+}
 
 /* Dropdown */
 #Resume .dropdown {

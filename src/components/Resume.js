@@ -19,7 +19,7 @@ const Interactive = () => {
 		{element: useRef(), img: logo('iosmail'), text: 'fransozzan@gmail.com', color: '#64B2FF'},
 		{element: useRef(), img: logo('iosmaps'), text: 'Buenos Aires, Argentina', color: '#ea4335'},
 		{element: useRef(), img: logo('iosphone'), text: '+5491131988960', color: '#00d81b'},
-		{element: useRef(), img: logo('ioslinkedin'), text: '<a href="https://www.linkedin.com/in/franciscoelfers" target="_blank">linkedin / franciscoelfers</a>', color: '#0b86ca'}
+		{element: useRef(), img: logo('ioslinkedin'), text: '<a href="https://www.linkedin.com/in/franciscoelfers" target="_blank">linkedin / franciscoelfers ↗</a>', color: '#0b86ca'}
 	]
 
 	const move = () => {
@@ -104,7 +104,10 @@ export default function Resume() {
 			<div className="title">
 				<h1>Francisco Elfers</h1>
 				<h4>Front-end Developer</h4>
+				<a class="PDF" href="/FranciscoElfers.pdf" target="_blank">↓ PDF ↓</a>
 			</div>
+
+
 			<Interactive />
 
 
