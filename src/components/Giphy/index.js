@@ -16,7 +16,6 @@ export default function GifAPI() {
     setLoading(true)
     // ejecutar busqueda
     history.push(`/gifs/${lastKeyword}`);
-    console.log('fetching ' + lastKeyword);
     setKeyword(event.target.value);
   }
 
@@ -27,7 +26,7 @@ export default function GifAPI() {
 		</form>
 
 		<div id="listOfGifs">
-			<ListOfGifs keyword={keyword} loading={loading} setLoading={setLoading} />
+			<ListOfGifs keyword={lastKeyword} loading={loading} setLoading={setLoading} />
 		</div>
 	</>
 }

@@ -18,9 +18,7 @@ export default function ListOfGifs({ keyword, loading, setLoading }) {
 
 	if (loading) return <span className="loading">⏳</span>
 	
-	return <> { 
-		gifs.map(({ id, title, url}) => 
-			<Gif title={title} url={url} key={id} id={id} />
-		)
-	} </>
+	return gifs.map(({ id, title, url}) => 
+		<Gif title={title} url={url} key={id} id={id} />
+	)
 }
