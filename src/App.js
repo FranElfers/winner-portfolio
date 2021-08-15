@@ -8,6 +8,7 @@ import P5 from './components/P5';
 import Resume from './components/Resume';
 import Canban from './components/Canban'
 import { ConfigProvider } from './context/config';
+import SpaceXSteps from './components/SpaceXSteps';
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
               <Route path="/p5js/" component={P5} />
               <Route path="/resume" component={Resume} />
               <Route path="/canban" component={Canban} />
+              <Route path="/spacexdesignsteps" component={SpaceXSteps} />
               {/* el path '/' tiene que estar a lo ultimo */}
               <Route path="/" component={Menu} /> 
             </Switch>

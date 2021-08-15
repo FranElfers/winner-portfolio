@@ -1,0 +1,40 @@
+.App {
+	padding: 0;
+}
+
+#SpaceXSteps {
+	background: white;
+	scroll-behavior: smooth;
+}
+
+#SpaceXSteps article {
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	width: 100vw;
+	min-height: 100vh;
+	padding: 0 6%;
+	font-family: 'Montserrat';
+}
+
+#SpaceXSteps ul {
+	max-width: 600px;
+	padding: 0;
+	text-align: left;
+	list-style-type: none;
+}
+
+#SpaceXSteps li {
+	margin-bottom: 10px;
+	padding-left: 10px;
+	border-left: 1px solid white;
+}
+
+#SpaceXSteps h1 {
+	font-weight: 100;
+	letter-spacing: 4px;
+}
+
+#SpaceXSteps p {
+	text-align: left;
+}
