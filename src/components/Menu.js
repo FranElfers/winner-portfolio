@@ -80,7 +80,7 @@ export default function Menu() {
 			</MenuCard>
 
 			<MenuCard link="https://www.codewars.com/users/FranElfers" shine="E7AB74">
-				<img style={{'width': '122px'}} src={logos + 'codewars.svg'} />				
+				<img style={{'width': '122px'}} src={logos + 'codewars.png'} />				
 				<ShinyTitle first="E6DB74" last="E7AB74" shine="E7AB74" out={true} >Codewars</ShinyTitle>
 			</MenuCard>
 
