@@ -147,11 +147,11 @@ export default function Resume() {
 
 			<h2>Experiencia</h2>
 			<h3>Co-fundador de socialstore.com.ar</h3>
-			<p>E-Commerce con VueJs y vanilla CSS; </p>
+			<p>E-Commerce con VueJs y vanilla CSS (4 meses)</p>
 			<h3>Tutor en Coderhouse.com</h3>
-			<p>En el curso de ReactJs</p>
-			<h3>185 horas en desarrollo web con Python</h3>
-			<p>Django, Bootstrap, DataTables, adminLTE, jQuery</p>
+			<p>En el curso de ReactJs (3 meses)</p>
+			<h3>Desarrollo web con Python</h3>
+			<p>Django, Bootstrap, DataTables, adminLTE, jQuery (185 hs)</p>
 			<h3>Profesor particular de python</h3>
 			
 			
@@ -159,8 +159,15 @@ export default function Resume() {
 
 
 			<h2>Habilidades</h2>
+			<h3>Vanilla</h3>
+			<p>JavaScript ES6, CSS3, Git</p>
+			<h3>Front-end</h3>
+			<p>React, Firebase, Nextjs, Figma</p>
+			<h3>Back-end</h3>
+			<p>Nodejs, Express, MongoDB</p>			
 			<h3>Nivel avanzado en lectura, escritura y escucha en inglés.</h3>
 			<h3>Conversación informal en inglés</h3>
+			<h3>Entorno de trabajo completo en GNU/Linux</h3>
 
 
 			<hr />
@@ -168,10 +175,9 @@ export default function Resume() {
 
 			<h2>Metas</h2>
 			<h3>"MERN" Full Stack Developer</h3>
-			<h3>TypeScript</h3>
 			<h3>Docker</h3>
-			<h3>NextJs</h3>
-			<h3>GraphQL, MongoDB, Redis & Postgres</h3>
+			<h3>TypeScript, Webpack, React Native</h3>
+			<h3>GraphQL, MongoDB, Redis</h3>
 
 
 			<hr />
