@@ -272,7 +272,6 @@ export default function Resume() {
 
 			<h2>Technical service</h2>
 			<h3>Desktop PCs</h3>
-			<p>Compra, armado e instalación</p>
 			<p>Buying, assembling, and installation</p>
 			<p>Software and hardware maintenance</p>
 			<p>Software repairment</p>
