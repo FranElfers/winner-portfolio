@@ -251,7 +251,6 @@ export default function Resume() {
 			<p>React, Firebase, Nextjs, Figma</p>
 			<h3>Back-end</h3>
 			<p>Nodejs, Express, MongoDB</p>			
-			<h3>Nivel avanzado en lectura, escritura y escucha en inglés.</h3>
 			<h3>Advanced english writing, reading & listening</h3>
 			<h3>Informal English conversation</h3>
 			<h3>GNU/Linux complete work environment.</h3>
