@@ -59,7 +59,7 @@ const Interactive = () => {
 
 
 export default function Resume() {
-	const [ english, setEnglish ] = React.useState(true)
+	const [ english, setEnglish ] = React.useState(navigator.language.includes('en'))
 	const ball1 = useRef()
 	const ball2 = useRef()
 	
