@@ -107,10 +107,8 @@ export default function Resume() {
 				<h4>Front-end Developer</h4>
 				<button onClick={()=>setEnglish(p=>!p)}>{english ? 'Cambiar a español' : 'Change to English'}</button>
 				<div>
-					{english 
-						? <a className="PDF" href='/FranciscoElfers-en.pdf' target="_blank">PDF (en)</a>
-						: <a className="PDF" href='/FranciscoElfers-es.pdf' target="_blank">PDF (es)</a>
-					}
+					<a className="PDF" href='/FranciscoElfers-en.pdf' target="_blank">PDF (en)</a>&nbsp;
+					<a className="PDF" href='/FranciscoElfers-es.pdf' target="_blank">PDF (es)</a>
 				</div>
 			</div>
 
